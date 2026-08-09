@@ -436,56 +436,34 @@ h1, h2, h3 { margin: 0; line-height: 1.3; }
 }
 
 /* =========================================================
-   VOYAGE STRIP — ship sailing across Quest Log
+   MINI SHIP — small looping ship, inline with hero title
    (nod to A.P. Moller Maersk, decorative)
    ========================================================= */
-.voyage-strip {
-  position: relative;
-  height: 84px;
-  margin-bottom: 0.5rem;
+.mini-ship-window {
+  display: inline-block;
+  vertical-align: middle;
+  width: 42px;
+  height: 21px;
   overflow: hidden;
-  border: var(--border-w) solid var(--ink);
-  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink);
-  background: var(--cream);
+  position: relative;
+  margin-left: 0.6rem;
+  transform: translateY(-2px);
 }
-.voyage-sea {
+.mini-ship {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 28px;
-  background:
-    repeating-linear-gradient(90deg, var(--sage) 0 10px, transparent 10px 20px),
-    var(--cream);
-  background-size: 20px 100%;
-  border-top: 2px solid var(--ink);
-  opacity: 0.65;
-}
-.voyage-ship {
-  position: absolute;
-  bottom: 22px;
-  left: -18%;
-  width: 130px;
-  height: auto;
+  top: 0;
+  left: -42px;
+  width: 40px;
+  height: 20px;
   image-rendering: pixelated;
-  animation: sail 24s linear infinite;
+  animation: mini-sail 5s linear infinite;
 }
-@keyframes sail {
-  from { left: -18%; }
-  to { left: 112%; }
-}
-.voyage-caption {
-  margin: 0.6rem 0 2.5rem;
-  font-family: var(--font-label);
-  font-size: 1.05rem;
-  color: var(--text-muted);
+@keyframes mini-sail {
+  from { left: -42px; }
+  to { left: 42px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .voyage-ship { animation: none; left: 40%; }
-}
-@media (max-width: 480px) {
-  .voyage-strip { height: 72px; }
-  .voyage-ship { width: 100px; bottom: 20px; }
+  .mini-ship { animation: none; left: 1px; }
 }
 
 /* =========================================================
