@@ -1,3 +1,5 @@
+Just a readme of how portfolio is built
+
 # Mohith D K — Portfolio
 
 AI Engineer @ A.P. Moller Maersk.
