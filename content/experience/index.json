@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "maersk",
+    "company": "A.P. Moller Maersk",
+    "role": "AI Intern",
+    "location": "Remote",
+    "start": "2025-06",
+    "end": "2025-07",
+    "summary": "Fine-tuned BERT for customer-feedback sentiment and ticket priority detection (F1 0.91).",
+    "tags": ["BERT", "NLP", "Conversational AI", "Sentiment analysis"]
+  },
+  {
+    "slug": "spectov",
+    "company": "SpectoV",
+    "role": "AI Intern",
+    "location": "Remote",
+    "start": "2025-06",
+    "end": "2025-07",
+    "summary": "Conversational AI and sentiment-driven classification modules built on a fine-tuned BERT pipeline (F1 0.91).",
+    "tags": ["BERT", "NLP", "Conversational AI", "Classification"]
+  },
+  {
+    "slug": "rapid-research-lab",
+    "company": "RAPID Research Lab",
+    "role": "Research Intern",
+    "location": "On-site",
+    "start": "2025-05",
+    "end": "2025-06",
+    "summary": "Research on \"Temporal Belief Dynamics in BERT\" using a graph-theoretic approach to interpretable representation drift.",
+    "tags": ["Research", "BERT", "Interpretability", "Graph theory"]
+  }
+]

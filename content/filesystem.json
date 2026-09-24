@@ -1,0 +1,346 @@
+{
+  "type": "folder",
+  "id": "root",
+  "name": "Macintosh HD",
+  "icon": "drive",
+  "children": [
+    {
+      "type": "folder",
+      "id": "applications",
+      "name": "Applications",
+      "icon": "applications",
+      "children": [
+        {
+          "type": "file",
+          "id": "app-finder",
+          "name": "Finder.app",
+          "kind": "app-shortcut",
+          "source": "finder",
+          "opensWith": "finder",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-preview",
+          "name": "Preview.app",
+          "kind": "app-shortcut",
+          "source": "preview",
+          "opensWith": "preview",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-textedit",
+          "name": "TextEdit.app",
+          "kind": "app-shortcut",
+          "source": "textedit",
+          "opensWith": "textedit",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-notes",
+          "name": "Notes.app",
+          "kind": "app-shortcut",
+          "source": "notes",
+          "opensWith": "notes",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-mail",
+          "name": "Mail.app",
+          "kind": "app-shortcut",
+          "source": "mail",
+          "opensWith": "mail",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-terminal",
+          "name": "Terminal.app",
+          "kind": "app-shortcut",
+          "source": "terminal",
+          "opensWith": "terminal",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-safari",
+          "name": "Safari.app",
+          "kind": "app-shortcut",
+          "source": "safari",
+          "opensWith": "safari",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-settings",
+          "name": "System Settings.app",
+          "kind": "app-shortcut",
+          "source": "settings",
+          "opensWith": "settings",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-about",
+          "name": "About This Mac.app",
+          "kind": "app-shortcut",
+          "source": "about",
+          "opensWith": "about",
+          "modified": "2026-09-24"
+        },
+        {
+          "type": "file",
+          "id": "app-activity-monitor",
+          "name": "Activity Monitor.app",
+          "kind": "app-shortcut",
+          "source": "activity-monitor",
+          "opensWith": "activity-monitor",
+          "modified": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "id": "users",
+      "name": "Users",
+      "children": [
+        {
+          "type": "folder",
+          "id": "home",
+          "name": "mohith",
+          "icon": "home",
+          "children": [
+            {
+              "type": "folder",
+              "id": "desktop",
+              "name": "Desktop",
+              "icon": "desktop",
+              "children": [
+                {
+                  "type": "file",
+                  "id": "resume",
+                  "name": "Resume.pdf",
+                  "kind": "pdf",
+                  "source": "public/Resume.pdf",
+                  "opensWith": "preview",
+                  "modified": "2026-09-24",
+                  "size": "134 KB"
+                },
+                {
+                  "type": "file",
+                  "id": "desktop-readme",
+                  "name": "README.md",
+                  "kind": "md",
+                  "source": "content/docs/readme.mdx",
+                  "opensWith": "textedit",
+                  "modified": "2026-09-24"
+                },
+                {
+                  "type": "file",
+                  "id": "profile-photo",
+                  "name": "Mohith.jpg",
+                  "kind": "image",
+                  "source": "public/me.jpg",
+                  "opensWith": "preview",
+                  "modified": "2026-09-24",
+                  "size": "156 KB"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "id": "projects",
+              "name": "Projects",
+              "icon": "projects",
+              "children": [
+                {
+                  "type": "folder",
+                  "id": "project-temporal-belief-dynamics-bert",
+                  "name": "Temporal Belief Dynamics in BERT",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "project-temporal-belief-dynamics-bert-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/projects/temporal-belief-dynamics-bert.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2025-07-01"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "project-arseniccure",
+                  "name": "ArsenicCure",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "project-arseniccure-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/projects/arseniccure.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-09-01"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "project-multimodal-cyberbullying-detection",
+                  "name": "Multimodal Cyberbullying Identification",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "project-multimodal-cyberbullying-detection-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/projects/multimodal-cyberbullying-detection.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2024-10-01"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "id": "experience",
+              "name": "Experience",
+              "icon": "experience",
+              "children": [
+                {
+                  "type": "folder",
+                  "id": "experience-maersk",
+                  "name": "A.P. Moller Maersk",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "experience-maersk-role",
+                      "name": "role.md",
+                      "kind": "md",
+                      "source": "content/experience/maersk.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2025-07-31"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "experience-spectov",
+                  "name": "SpectoV",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "experience-spectov-role",
+                      "name": "role.md",
+                      "kind": "md",
+                      "source": "content/experience/spectov.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2025-07-31"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "experience-rapid-research-lab",
+                  "name": "RAPID Research Lab",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "experience-rapid-research-lab-role",
+                      "name": "role.md",
+                      "kind": "md",
+                      "source": "content/experience/rapid-research-lab.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2025-06-31"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "id": "documents",
+              "name": "Documents",
+              "icon": "documents",
+              "children": [
+                {
+                  "type": "folder",
+                  "id": "certificates",
+                  "name": "Certificates",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "cert-pes",
+                      "name": "B.Tech — PES University.md",
+                      "kind": "md",
+                      "source": "content/docs/education-pes.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-05-31"
+                    },
+                    {
+                      "type": "file",
+                      "id": "cert-hack-ai",
+                      "name": "HACK-AI Winners.md",
+                      "kind": "md",
+                      "source": "content/docs/hack-ai.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-09-24"
+                    },
+                    {
+                      "type": "file",
+                      "id": "cert-iccis",
+                      "name": "ICCIS 2025 Publication.md",
+                      "kind": "md",
+                      "source": "content/docs/publication.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2025-07-31"
+                    }
+                  ]
+                },
+                {
+                  "type": "file",
+                  "id": "doc-shortcuts",
+                  "name": "Keyboard Shortcuts.md",
+                  "kind": "md",
+                  "source": "content/docs/keyboard-shortcuts.mdx",
+                  "opensWith": "textedit",
+                  "modified": "2026-09-24"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "id": "downloads",
+              "name": "Downloads",
+              "icon": "downloads",
+              "children": [
+                {
+                  "type": "file",
+                  "id": "downloads-resume",
+                  "name": "Mohith_D_K_1.pdf",
+                  "kind": "pdf",
+                  "source": "public/Resume.pdf",
+                  "opensWith": "preview",
+                  "modified": "2026-09-24",
+                  "size": "134 KB"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "id": "trash",
+              "name": ".Trash",
+              "icon": "trash",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

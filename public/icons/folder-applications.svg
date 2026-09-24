@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<defs>
+<linearGradient id="back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5DB4F5"/><stop offset="1" stop-color="#3D97E6"/></linearGradient>
+<linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ED0FF"/><stop offset="1" stop-color="#5AB3F4"/></linearGradient>
+</defs>
+<path d="M10 24a5 5 0 0 1 5-5h20.5a5 5 0 0 1 3.9 1.9l3.2 4.1H85a5 5 0 0 1 5 5V78a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5Z" fill="url(#back)"/>
+<path d="M10 36a5 5 0 0 1 5-5h70a5 5 0 0 1 5 5v42a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5Z" fill="url(#front)"/>
+<path d="M10.5 36a4.5 4.5 0 0 1 4.5-4.5h70" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/>
+<g transform="translate(35 42) scale(1.25)" fill="none" stroke="#2C7FCC" stroke-opacity=".75" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></g>
+</svg>

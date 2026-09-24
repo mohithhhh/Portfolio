@@ -1,0 +1,6 @@
+[
+  { "slug": "about-me", "title": "About me", "folder": "Portfolio", "pinned": true, "modified": "2026-09-24" },
+  { "slug": "publication-iccis-2025", "title": "Publication: ICCIS 2025", "folder": "Writing", "pinned": false, "modified": "2025-07-31" },
+  { "slug": "coursework", "title": "Coursework", "folder": "Portfolio", "pinned": false, "modified": "2026-05-31" },
+  { "slug": "hack-ai", "title": "HACK-AI hackathon win", "folder": "Portfolio", "pinned": false, "modified": "2026-09-24" }
+]

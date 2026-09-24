@@ -1,0 +1,160 @@
+/*
+ * Design tokens for the macOS and iOS shells.
+ * STARTING VALUES from SPEC §10 and macOS 26 conventions: input/reference/ is
+ * empty, so every measurement marked (verify) still needs checking against
+ * real screenshots at 2x. See PLAN.md → "Visual tokens".
+ */
+:root {
+  color-scheme: light;
+
+  /* type */
+  --font-system: -apple-system, BlinkMacSystemFont, var(--font-inter), system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Mono', 'Roboto Mono', Consolas, monospace;
+  --fs-body: 13px;
+  --fs-small: 11px;
+  --fs-title: 13px;
+  --fs-large-title: 26px;
+  --tracking-body: -0.08px;
+  --tracking-large: -0.4px;
+
+  /* geometry (verify) */
+  --menubar-h: 24px;
+  --titlebar-h: 28px;
+  --toolbar-h: 52px;
+  --sidebar-w: 200px;
+  --window-radius: 16px;
+  --control-radius: 6px;
+  --menu-radius: 10px;
+  --traffic-size: 12px;
+  --traffic-gap: 8px;
+  --traffic-inset: 20px;
+  --dock-icon: 52px;
+  --dock-pad: 6px;
+  --dock-radius: 22px;
+  --dock-bottom: 6px;
+  --dock-reserved: 78px;
+
+  /* colour */
+  --accent: #007aff;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgb(0 122 255 / 0.16);
+  --focus-ring: rgb(0 122 255 / 0.55);
+  --text-primary: rgb(0 0 0 / 0.86);
+  --text-secondary: rgb(0 0 0 / 0.56);
+  --text-tertiary: rgb(0 0 0 / 0.34);
+  --text-on-glass: rgb(0 0 0 / 0.86);
+  --separator: rgb(0 0 0 / 0.1);
+  --separator-strong: rgb(0 0 0 / 0.18);
+  --window-bg: #ffffff;
+  --window-bg-alt: #f5f5f7;
+  --row-alt: rgb(0 0 0 / 0.028);
+  --control-bg: rgb(0 0 0 / 0.05);
+  --control-bg-hover: rgb(0 0 0 / 0.09);
+  --selection-inactive: rgb(0 0 0 / 0.1);
+
+  --traffic-close: #ff5f57;
+  --traffic-minimize: #febc2e;
+  --traffic-zoom: #28c840;
+  --traffic-inactive: rgb(0 0 0 / 0.14);
+  --traffic-border: rgb(0 0 0 / 0.12);
+
+  /* materials: Liquid Glass (glass) with a solid Frosted fallback */
+  --glass-blur: 28px;
+  --glass-saturate: 180%;
+  --glass-bg: rgb(246 246 248 / 0.66);
+  --glass-bg-strong: rgb(246 246 248 / 0.8);
+  --glass-highlight: rgb(255 255 255 / 0.55);
+  --glass-edge: rgb(0 0 0 / 0.08);
+  --menubar-bg: rgb(255 255 255 / 0.28);
+  --menubar-text: rgb(0 0 0 / 0.86);
+  --menu-bg: rgb(246 246 248 / 0.78);
+  --dock-bg: rgb(255 255 255 / 0.3);
+  --sidebar-bg: rgb(236 236 240 / 0.62);
+  --frosted-bg: #ececef;
+  --frosted-menu-bg: #f4f4f6;
+  --frosted-dock-bg: rgb(236 236 239 / 0.97);
+
+  /* shadows (verify) */
+  --shadow-window: 0 0 0 0.5px rgb(0 0 0 / 0.22), 0 2px 6px rgb(0 0 0 / 0.1), 0 22px 60px 4px rgb(0 0 0 / 0.3);
+  --shadow-window-inactive: 0 0 0 0.5px rgb(0 0 0 / 0.16), 0 1px 3px rgb(0 0 0 / 0.06), 0 12px 32px rgb(0 0 0 / 0.16);
+  --shadow-menu: 0 0 0 0.5px rgb(0 0 0 / 0.18), 0 10px 30px rgb(0 0 0 / 0.2);
+  --shadow-dock: 0 0 0 0.5px rgb(0 0 0 / 0.12), 0 10px 30px rgb(0 0 0 / 0.16);
+
+  /* iOS */
+  --ios-icon: 62px;
+  --ios-radius: 22%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --accent: #0a84ff;
+    --accent-soft: rgb(10 132 255 / 0.24);
+    --focus-ring: rgb(10 132 255 / 0.7);
+    --text-primary: rgb(255 255 255 / 0.88);
+    --text-secondary: rgb(255 255 255 / 0.56);
+    --text-tertiary: rgb(255 255 255 / 0.3);
+    --text-on-glass: rgb(255 255 255 / 0.9);
+    --separator: rgb(255 255 255 / 0.1);
+    --separator-strong: rgb(255 255 255 / 0.18);
+    --window-bg: #1e1e20;
+    --window-bg-alt: #262628;
+    --row-alt: rgb(255 255 255 / 0.035);
+    --control-bg: rgb(255 255 255 / 0.08);
+    --control-bg-hover: rgb(255 255 255 / 0.13);
+    --selection-inactive: rgb(255 255 255 / 0.12);
+    --traffic-inactive: rgb(255 255 255 / 0.18);
+    --traffic-border: rgb(0 0 0 / 0.3);
+    --glass-bg: rgb(40 40 44 / 0.6);
+    --glass-bg-strong: rgb(40 40 44 / 0.78);
+    --glass-highlight: rgb(255 255 255 / 0.14);
+    --glass-edge: rgb(0 0 0 / 0.5);
+    --menubar-bg: rgb(0 0 0 / 0.22);
+    --menubar-text: rgb(255 255 255 / 0.92);
+    --menu-bg: rgb(36 36 40 / 0.76);
+    --dock-bg: rgb(40 40 44 / 0.38);
+    --sidebar-bg: rgb(44 44 48 / 0.6);
+    --frosted-bg: #2a2a2d;
+    --frosted-menu-bg: #2c2c30;
+    --frosted-dock-bg: rgb(44 44 48 / 0.97);
+    --shadow-window: 0 0 0 0.5px rgb(255 255 255 / 0.14), 0 2px 6px rgb(0 0 0 / 0.3), 0 22px 60px 4px rgb(0 0 0 / 0.55);
+    --shadow-window-inactive: 0 0 0 0.5px rgb(255 255 255 / 0.1), 0 1px 3px rgb(0 0 0 / 0.2), 0 12px 32px rgb(0 0 0 / 0.35);
+    --shadow-menu: 0 0 0 0.5px rgb(255 255 255 / 0.12), 0 10px 30px rgb(0 0 0 / 0.45);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --accent: #0a84ff;
+  --accent-soft: rgb(10 132 255 / 0.24);
+  --focus-ring: rgb(10 132 255 / 0.7);
+  --text-primary: rgb(255 255 255 / 0.88);
+  --text-secondary: rgb(255 255 255 / 0.56);
+  --text-tertiary: rgb(255 255 255 / 0.3);
+  --text-on-glass: rgb(255 255 255 / 0.9);
+  --separator: rgb(255 255 255 / 0.1);
+  --separator-strong: rgb(255 255 255 / 0.18);
+  --window-bg: #1e1e20;
+  --window-bg-alt: #262628;
+  --row-alt: rgb(255 255 255 / 0.035);
+  --control-bg: rgb(255 255 255 / 0.08);
+  --control-bg-hover: rgb(255 255 255 / 0.13);
+  --selection-inactive: rgb(255 255 255 / 0.12);
+  --traffic-inactive: rgb(255 255 255 / 0.18);
+  --traffic-border: rgb(0 0 0 / 0.3);
+  --glass-bg: rgb(40 40 44 / 0.6);
+  --glass-bg-strong: rgb(40 40 44 / 0.78);
+  --glass-highlight: rgb(255 255 255 / 0.14);
+  --glass-edge: rgb(0 0 0 / 0.5);
+  --menubar-bg: rgb(0 0 0 / 0.22);
+  --menubar-text: rgb(255 255 255 / 0.92);
+  --menu-bg: rgb(36 36 40 / 0.76);
+  --dock-bg: rgb(40 40 44 / 0.38);
+  --sidebar-bg: rgb(44 44 48 / 0.6);
+  --frosted-bg: #2a2a2d;
+  --frosted-menu-bg: #2c2c30;
+  --frosted-dock-bg: rgb(44 44 48 / 0.97);
+  --shadow-window: 0 0 0 0.5px rgb(255 255 255 / 0.14), 0 2px 6px rgb(0 0 0 / 0.3), 0 22px 60px 4px rgb(0 0 0 / 0.55);
+  --shadow-window-inactive: 0 0 0 0.5px rgb(255 255 255 / 0.1), 0 1px 3px rgb(0 0 0 / 0.2), 0 12px 32px rgb(0 0 0 / 0.35);
+  --shadow-menu: 0 0 0 0.5px rgb(255 255 255 / 0.12), 0 10px 30px rgb(0 0 0 / 0.45);
+}

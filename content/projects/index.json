@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "temporal-belief-dynamics-bert",
+    "name": "Temporal Belief Dynamics in BERT",
+    "kind": "Research project",
+    "start": "2025-06",
+    "end": "2025-07",
+    "summary": "Mapped how BERT's internal \"beliefs\" evolve across 10 fine-tuning epochs with graph-theoretic networks and 2D embeddings. Published at ICCIS 2025 (Springer LNCS).",
+    "tags": ["BERT", "Interpretability", "Graph theory", "Embeddings", "Research"],
+    "highlights": ["Accepted at ICCIS 2025, BITS Pilani Goa (Springer LNCS)", "10 fine-tuning epochs analysed"],
+    "repo": null,
+    "demo": null
+  },
+  {
+    "slug": "arseniccure",
+    "name": "ArsenicCure",
+    "kind": "AI-powered arsenic skin lesion detection and severity grading",
+    "start": "2024-09",
+    "end": null,
+    "summary": "Hybrid ResNet-18 + MobileNet-v2 + ViT model in PyTorch: 88.33% test accuracy, F1 0.88 on 3,462 skin lesion images across four severity classes.",
+    "tags": ["PyTorch", "ResNet-18", "MobileNet-v2", "ViT", "Grad-CAM", "FastAPI", "Docker", "MongoDB"],
+    "highlights": ["88.33% test accuracy", "F1-score 0.88", "3,462 images, 4 severity classes"],
+    "repo": null,
+    "demo": null
+  },
+  {
+    "slug": "multimodal-cyberbullying-detection",
+    "name": "Multimodal Cyberbullying Identification",
+    "kind": "Advanced multimodal deep learning framework for proactive cyberbullying identification",
+    "start": "2024-10",
+    "end": "2024-10",
+    "summary": "Multimodal model combining an LSTM for text with ResNet50 image features to predict cyberbullying behaviour, reaching 85% detection accuracy.",
+    "tags": ["Python", "Keras", "TensorFlow", "LSTM", "ResNet50"],
+    "highlights": ["85% detection accuracy", "Multi-Modal Hate Speech Dataset"],
+    "repo": null,
+    "demo": null
+  }
+]

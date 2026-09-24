@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@import '../src/styles/tokens.css';
+@import '../src/styles/base.css';
+@import '../src/styles/boot.css';
+@import '../src/styles/macos.css';
+@import '../src/styles/apps.css';
+@import '../src/styles/ios.css';
+@import '../src/styles/prose.css';
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-tertiary: var(--text-tertiary);
+  --color-separator: var(--separator);
+  --color-window: var(--window-bg);
+  --color-window-alt: var(--window-bg-alt);
+  --color-control: var(--control-bg);
+  --font-sans: var(--font-system);
+  --font-mono: var(--font-mono);
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Mohith D K",
+  "monogram": "MDK",
+  "title": "AI Intern",
+  "headline": "AI/ML engineer: NLP, LLMs and deep learning",
+  "tagline": "Building enterprise AI agents and ML systems that solve real business problems, not just demos. Idea to production, at global scale.",
+  "location": "Bangalore, Karnataka, India",
+  "email": "mohithog7@gmail.com",
+  "phone": "+91 9019325337",
+  "availability": { "open": true, "label": "Open to work" },
+  "currentProject": "arseniccure",
+  "links": [
+    { "id": "github", "label": "GitHub", "url": "https://github.com/mohithhhh", "handle": "mohithhhh" },
+    { "id": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/mohith-d-k-76b815255/", "handle": "mohith-d-k" }
+  ],
+  "education": [
+    {
+      "id": "pes-btech",
+      "institution": "PES University",
+      "location": "Bangalore, Karnataka",
+      "degree": "B.Tech in Computer Science Engineering (AI/ML)",
+      "start": "2022-08",
+      "end": "2026-05",
+      "coursework": ["Advanced Data Analytics", "Deep Learning", "LLM", "NLP", "Machine Learning", "Computer Networks", "Operating Systems", "Cloud Computing"]
+    }
+  ],
+  "publications": [
+    {
+      "id": "iccis-2025",
+      "authors": "M.D.K. et al.",
+      "title": "Temporal Belief Dynamics in BERT: A Graph-Theoretic Approach to Interpretable Representation Drift",
+      "venue": "7th International Conference on Communication and Intelligent Systems (ICCIS 2025)",
+      "location": "BITS Pilani, Goa",
+      "publisher": "Springer LNCS",
+      "year": 2025,
+      "url": null,
+      "project": "temporal-belief-dynamics-bert"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "hack-ai",
+      "title": "Winners: HACK-AI 24-hour Data Analytics Hackathon",
+      "detail": "PES University in association with Vision Karnataka Foundation"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2880 1800" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#2A1420"/><stop offset=".45" stop-color="#4A2032"/><stop offset=".8" stop-color="#6A2E3C"/><stop offset="1" stop-color="#1E0E18"/></linearGradient>
+<radialGradient id="glow" cx=".72" cy=".22" r=".6"><stop offset="0" stop-color="#fff" stop-opacity="0.12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="30"/></filter>
+</defs>
+<rect width="2880" height="1800" fill="url(#sky)"/>
+<rect width="2880" height="1800" fill="url(#glow)"/>
+<g filter="url(#blur)">
+<path d="M0 430 C 480 340, 960 520, 1440 385 S 2400 520, 2880 400 V1800 H0Z" fill="#6B2D42" opacity="0.55"/>
+<path d="M0 550 C 480 435, 960 665, 1440 492.5 S 2400 665, 2880 511.6666666666667 V1800 H0Z" fill="#86394C" opacity="0.55"/>
+<path d="M0 670 C 480 530, 960 810, 1440 600 S 2400 810, 2880 623.3333333333334 V1800 H0Z" fill="#4A1E30" opacity="0.55"/>
+</g>
+</svg>

@@ -1,0 +1,190 @@
+/*
+ * Boot sequence. Server-rendered and animated in pure CSS so it paints before
+ * any JS runs and hides shell detection. Timeline: lid opens (0–1.2s),
+ * monogram + progress (1.2–2.2s), then the shell fades in.
+ */
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 200000;
+  display: grid;
+  place-items: center;
+  background: #000;
+  color: #fff;
+  transition: opacity 450ms ease, visibility 0s linear 450ms;
+}
+.boot.is-done,
+html[data-booted] .boot {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+html[data-booted] .boot {
+  transition: none;
+}
+
+.boot-stage {
+  position: relative;
+  width: min(440px, 70vw);
+  aspect-ratio: 440 / 300;
+  perspective: 900px;
+}
+
+.boot-lid {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 12%;
+  height: 80%;
+  transform-origin: 50% 100%;
+  transform: rotateX(-88deg);
+  border-radius: 14px 14px 4px 4px;
+  background: linear-gradient(180deg, #2b2d31, #151619);
+  box-shadow: 0 0 0 1.5px #3a3c41 inset;
+  animation: boot-lid 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+  display: grid;
+  place-items: center;
+}
+.boot-screen {
+  position: absolute;
+  inset: 5% 4% 6%;
+  border-radius: 6px;
+  background: #000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.boot-base {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+  height: 6%;
+  border-radius: 2px 2px 14px 14px;
+  background: linear-gradient(180deg, #d9dbe0, #8d9097);
+  box-shadow: 0 10px 30px rgb(255 255 255 / 0.06);
+}
+.boot-base::after {
+  content: '';
+  position: absolute;
+  left: 42%;
+  right: 42%;
+  top: 0;
+  height: 35%;
+  border-radius: 0 0 6px 6px;
+  background: #6f727a;
+}
+
+.boot-content {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  opacity: 0;
+  animation: boot-fade 0.35s ease 1.2s forwards;
+}
+.boot-monogram {
+  font-weight: 800;
+  font-size: clamp(18px, 4vw, 26px);
+  letter-spacing: -0.5px;
+}
+.boot-progress {
+  width: clamp(80px, 22vw, 120px);
+  height: 4px;
+  border-radius: 2px;
+  background: rgb(255 255 255 / 0.22);
+  overflow: hidden;
+}
+.boot-progress > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  border-radius: inherit;
+  animation: boot-bar 1s cubic-bezier(0.4, 0, 0.2, 1) 1.25s forwards;
+}
+
+.boot-footer {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 11px;
+  color: rgb(255 255 255 / 0.36);
+}
+.boot-footer a,
+.boot-footer button {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.boot-footer a:hover,
+.boot-footer button:hover,
+.boot-footer a:focus-visible {
+  color: rgb(255 255 255 / 0.7);
+}
+
+@keyframes boot-lid {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes boot-fade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes boot-bar {
+  to {
+    width: 100%;
+  }
+}
+
+/* Phones: no laptop, just the monogram. */
+html[data-shell='ios'] .boot-lid,
+html[data-shell='ios'] .boot-base {
+  display: none;
+}
+html[data-shell='ios'] .boot-content {
+  animation-delay: 0.1s;
+}
+html[data-shell='ios'] .boot-progress > span {
+  animation-delay: 0.15s;
+  animation-duration: 0.8s;
+}
+html[data-shell='ios'] .boot-stage {
+  display: grid;
+  place-items: center;
+}
+html[data-shell='ios'] .boot-screen {
+  position: static;
+  background: none;
+}
+
+/* Reduced motion: a static frame, then a 300ms fade. */
+@media (prefers-reduced-motion: reduce) {
+  .boot-lid {
+    animation: none;
+    transform: none;
+  }
+  .boot-content {
+    animation: none;
+    opacity: 1;
+  }
+  .boot-progress > span {
+    animation: none;
+    width: 100%;
+  }
+  .boot {
+    transition: opacity 300ms ease, visibility 0s linear 300ms;
+  }
+}
+.boot-hint-phone,
+html[data-shell='ios'] .boot-hint-desktop {
+  display: none;
+}
+html[data-shell='ios'] .boot-hint-phone {
+  display: inline;
+}

@@ -1,0 +1,15 @@
+{
+  "categories": [
+    { "id": "languages", "label": "Languages & Core Development", "items": ["Python", "SQL", "HTML/CSS", "React.js"] },
+    { "id": "ai-ml", "label": "AI/ML & Data", "items": ["PyTorch", "Keras", "TensorFlow", "Hugging Face", "Pandas", "LLM", "NLP", "RAG", "LangChain"] },
+    { "id": "backend", "label": "Backend, Databases & Streaming", "items": ["FastAPI", "MongoDB", "Node.js", "MySQL", "Apache Kafka"] },
+    { "id": "devops", "label": "DevOps & Tools", "items": ["Docker", "Kubernetes", "Git", "Jupyter Notebooks", "VS Code", "Wireshark"] }
+  ],
+  "specRows": [
+    { "label": "Chip", "value": "PyTorch · TensorFlow · Keras · Hugging Face" },
+    { "label": "Memory", "value": "LLM · NLP · RAG · LangChain" },
+    { "label": "Graphics", "value": "Python · SQL · React.js · HTML/CSS" },
+    { "label": "Storage", "value": "MongoDB · MySQL · Apache Kafka" },
+    { "label": "Serial Number", "value": "Docker · Kubernetes · FastAPI · Git" }
+  ]
+}
