@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight, Lock, RotateCw } from 'lucide-react'
+import { BrandIcon } from '@/ui/BrandIcon'
 import { Toolbar } from '@/ui/Toolbar'
 import { bookmarkSections } from './bookmarks'
 
@@ -50,8 +51,8 @@ export default function Safari() {
                         onFocus={() => setHovered(b.url)}
                         onBlur={() => setHovered(null)}
                       >
-                        <span className="safari-tile-icon" style={{ background: b.color }}>
-                          {b.initial}
+                        <span className={`safari-tile-icon ${b.brand ? 'is-brand' : ''}`} style={{ background: b.color }}>
+                          {b.brand ? <BrandIcon brand={b.brand} size={34} /> : b.initial}
                         </span>
                         <span className="safari-tile-title">{b.title}</span>
                       </a>

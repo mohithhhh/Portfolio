@@ -1,10 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 <defs>
-<linearGradient id="back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5DB4F5"/><stop offset="1" stop-color="#3D97E6"/></linearGradient>
-<linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ED0FF"/><stop offset="1" stop-color="#5AB3F4"/></linearGradient>
+<linearGradient id="back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA6F0"/><stop offset="1" stop-color="#2C7FD9"/></linearGradient>
+<linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ED8FF"/><stop offset=".55" stop-color="#6DBDF7"/><stop offset="1" stop-color="#4AA3EE"/></linearGradient>
+<linearGradient id="lip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E4EEF8"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="1.4" stdDeviation="1.4" flood-color="#0B3A75" flood-opacity=".35"/></filter>
+<filter id="in" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="-.6" stdDeviation=".3" flood-color="#0B4A95" flood-opacity=".35"/></filter>
 </defs>
-<path d="M10 24a5 5 0 0 1 5-5h20.5a5 5 0 0 1 3.9 1.9l3.2 4.1H85a5 5 0 0 1 5 5V78a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5Z" fill="url(#back)"/>
-<path d="M10 36a5 5 0 0 1 5-5h70a5 5 0 0 1 5 5v42a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5Z" fill="url(#front)"/>
-<path d="M10.5 36a4.5 4.5 0 0 1 4.5-4.5h70" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width=".8"/>
-<g transform="translate(35 42) scale(1.25)" fill="none" stroke="#2C7FCC" stroke-opacity=".75" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></g>
+<g filter="url(#sh)">
+<path d="M10 25a5 5 0 0 1 5-5h20.5a5 5 0 0 1 3.9 1.9l3.2 4.1H85a5 5 0 0 1 5 5V77a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5Z" fill="url(#back)"/>
+<rect x="15" y="29" width="70" height="20" rx="2" fill="url(#paper)"/>
+<path d="M10 37a5 5 0 0 1 5-5h70a5 5 0 0 1 5 5v40a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5Z" fill="url(#front)"/>
+</g>
+<path d="M10.5 37a4.5 4.5 0 0 1 4.5-4.5h70a4.5 4.5 0 0 1 4.5 4.5" fill="none" stroke="url(#lip)" stroke-width="1"/>
+<path d="M10 72v5a5 5 0 0 0 5 5h70a5 5 0 0 0 5-5v-5" fill="#1F6FC9" opacity=".12"/>
+<g transform="translate(35 43) scale(1.25)" fill="none" stroke="#2A78C8" stroke-opacity=".85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#in)"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></g>
 </svg>

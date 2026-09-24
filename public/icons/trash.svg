@@ -1,10 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 <defs>
-<linearGradient id="can" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9DDE3" stop-opacity=".9"/><stop offset=".5" stop-color="#F4F6F8" stop-opacity=".95"/><stop offset="1" stop-color="#C9CED6" stop-opacity=".9"/></linearGradient>
+<linearGradient id="can" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C9CFD7" stop-opacity=".78"/><stop offset=".35" stop-color="#F7F9FB" stop-opacity=".9"/><stop offset=".65" stop-color="#E9EDF2" stop-opacity=".85"/><stop offset="1" stop-color="#AEB6C0" stop-opacity=".8"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F6F8"/><stop offset="1" stop-color="#A9B1BC"/></linearGradient>
+<radialGradient id="inside" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#6B737E"/><stop offset="1" stop-color="#9CA4AF"/></radialGradient>
+<clipPath id="body"><path d="M20 26l7.4 58.6a6 6 0 0 0 6 5.4h33.2a6 6 0 0 0 6-5.4L80 26Z"/></clipPath>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-opacity=".28"/></filter>
+<filter id="ps" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy=".6" stdDeviation=".6" flood-opacity=".25"/></filter>
 </defs>
+<ellipse cx="50" cy="26" rx="30" ry="6.5" fill="url(#inside)"/>
 
-<ellipse cx="50" cy="24" rx="30" ry="6" fill="#B8BFC9"/>
-<path d="M20 24l7 62a6 6 0 0 0 6 5h34a6 6 0 0 0 6-5l7-62Z" fill="url(#can)" stroke="#AEB6C1" stroke-width="1"/>
-<g stroke="#A5ADB8" stroke-width="1.6" stroke-linecap="round" opacity=".8"><path d="M36 34l3 48M50 34v48M64 34l-3 48"/></g>
-<ellipse cx="50" cy="24" rx="30" ry="6" fill="none" stroke="#fff" stroke-opacity=".8"/>
+<g filter="url(#sh)">
+<path d="M20 26l7.4 58.6a6 6 0 0 0 6 5.4h33.2a6 6 0 0 0 6-5.4L80 26Z" fill="url(#can)"/>
+</g>
+<g clip-path="url(#body)" stroke="#8D96A2" stroke-opacity=".45" stroke-width=".7" fill="none"><path d="M24 26L29.72 90M28 26L32.84 90M32 26L35.96 90M36 26L39.08 90M40 26L42.2 90M44 26L45.32 90M48 26L48.44 90M52 26L51.56 90M56 26L54.68 90M60 26L57.8 90M64 26L60.92 90M68 26L64.04 90M72 26L67.16 90M76 26L70.28 90M20.7 32H79.3M21.1 36.5H78.9M21.6 41H78.4M22.1 45.5H77.9M22.6 50H77.4M23.1 54.5H76.9M23.6 59H76.4M24.1 63.5H75.9M24.6 68H75.4M25.1 72.5H74.9M25.6 77H74.4M26.1 81.5H73.9M26.6 86H73.4"/></g>
+<path d="M27 32l6 52" stroke="#fff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="50" cy="26" rx="30" ry="6.5" fill="none" stroke="url(#rim)" stroke-width="2.6"/>
+<ellipse cx="50" cy="25.4" rx="29" ry="5.8" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width=".6"/>
 </svg>

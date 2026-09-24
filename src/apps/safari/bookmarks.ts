@@ -1,6 +1,7 @@
 import { profile, projects } from '@/content'
+import { brandOf, type Brand } from '@/ui/BrandIcon'
 
-export type Bookmark = { title: string; url: string | null; subtitle: string; initial: string; color: string }
+export type Bookmark = { title: string; url: string | null; subtitle: string; initial: string; color: string; brand?: Brand }
 
 /** Safari start page, built from profile.json and projects (no invented links). */
 export function bookmarkSections(origin: string): Array<{ title: string; items: Bookmark[] }> {
@@ -14,7 +15,8 @@ export function bookmarkSections(origin: string): Array<{ title: string; items: 
           url: l.url,
           subtitle: l.url.replace(/^https?:\/\/(www\.)?/, ''),
           initial: l.label[0]!,
-          color: l.id === 'linkedin' ? '#0A66C2' : '#24292F',
+          color: '#FFFFFF',
+          brand: brandOf(l.id),
         })),
         {
           title: 'Email',

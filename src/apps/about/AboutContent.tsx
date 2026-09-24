@@ -1,11 +1,11 @@
 'use client'
 // About This Mac content, shared by macOS and the iOS "About" app.
 import { useState } from 'react'
-import { ChevronLeft, CodeXml, Mail, UserRound } from 'lucide-react'
+import { ChevronLeft, Mail } from 'lucide-react'
+import { BrandIcon, brandOf } from '@/ui/BrandIcon'
 import { profile, skills } from '@/content'
 import { openCompose } from '@/os/actions'
 
-const linkIcon = (id: string) => (id === 'github' ? CodeXml : id === 'linkedin' ? UserRound : Mail)
 
 export function AboutContent({ compact = false }: { compact?: boolean }) {
   const [more, setMore] = useState(false)
@@ -47,10 +47,10 @@ export function AboutContent({ compact = false }: { compact?: boolean }) {
       </button>
       <div className="about-links">
         {profile.links.map((l) => {
-          const Icon = linkIcon(l.id)
+          const brand = brandOf(l.id)
           return (
             <a key={l.id} href={l.url} target="_blank" rel="noopener noreferrer" aria-label={l.label}>
-              <Icon size={16} />
+              {brand ? <BrandIcon brand={brand} size={17} /> : <Mail size={16} />}
             </a>
           )
         })}

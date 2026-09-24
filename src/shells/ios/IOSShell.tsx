@@ -10,6 +10,7 @@ import { useSystem } from '@/os/stores/system'
 import { useFs } from '@/os/stores/fs'
 import { HOME_ID } from '@/os/fs'
 import type { InitialAction } from '../types'
+import { BrandIcon } from '@/ui/BrandIcon'
 import { useStats } from '@/apps/activity-monitor/ActivityMonitor'
 
 type Rect = { x: number; y: number; w: number; h: number }
@@ -144,13 +145,13 @@ function HomeScreen({ open }: { open: (id: AppId, el: HTMLElement) => void }) {
           <AppIcon key={id} id={id} onOpen={open} />
         ))}
         {githubUrl && (
-          <WebClip href={githubUrl} label="GitHub" color="#24292f">
-            <span className="ios-webclip-text">GH</span>
+          <WebClip href={githubUrl} label="GitHub" color="#181717">
+            <BrandIcon brand="github" size={36} inverted />
           </WebClip>
         )}
         {linkedinUrl && (
-          <WebClip href={linkedinUrl} label="LinkedIn" color="#0a66c2">
-            <span className="ios-webclip-text">in</span>
+          <WebClip href={linkedinUrl} label="LinkedIn" color="#FFFFFF">
+            <BrandIcon brand="linkedin" size={38} />
           </WebClip>
         )}
       </div>
