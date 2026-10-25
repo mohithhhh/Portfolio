@@ -83,7 +83,7 @@ The spec wants side-by-side comparisons in `input/compare/`; that folder is wait
 ## Open questions for the owner
 
 1. **"Open to work"**: the spec requires this status item. It is on (`profile.availability.open`); set it to `false` if that is wrong.
-2. **Repository visibility**: Il Colosseo, Provenance and DawaiSathi link to `github.com/mohithhhh/il-colosseo`, `/provenance` and `/dawaisathi`. The repos exist, but their public visibility couldn't be checked from the build environment; if any is private, visitors get a 404, so make it public or clear its `repo` in `content/projects/index.json`.
+Confirmed by the owner: the Il Colosseo, Provenance and DawaiSathi repositories are public.
 
 Confirmed by the owner: Provenance is the current project (iOS Dynamic Island and widget).
 
