@@ -92,7 +92,7 @@ Resolved by the October 2026 resume: the duplicated SpectoV/Maersk bullets and t
 
 ## TODOs (missing content)
 
-- `TODO(owner)`: link to the ICCIS 2025 paper (DOI or Springer page). Shown in Notes and Safari → `profile.publications[0].url`.
+- `TODO(owner)`: link to the ICCIS 2025 paper (DOI or Springer page). Shown in Notes; Safari's Writing section appears once it is set → `profile.publications[0].url`.
 - `TODO(owner)`: architecture diagrams, screenshots or demo videos for projects → `public/` and `filesystem.json`.
 - `TODO(owner)`: Trash content (failed experiments and lessons learned). The Trash currently shows an empty state with this TODO.
 - `TODO(owner)`: HACK-AI date and winning project (Notes).

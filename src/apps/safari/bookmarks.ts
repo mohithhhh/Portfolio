@@ -30,16 +30,10 @@ export function bookmarkSections(origin: string): Array<{ title: string; items: 
     },
     {
       title: 'Writing',
-      items: pub
-        ? [
-            {
-              title: 'ICCIS 2025 paper',
-              url: pub.url,
-              subtitle: pub.url ? pub.url : 'TODO(owner): add the paper link',
-              initial: 'P',
-              color: '#7A4FE0',
-            },
-          ]
+      // Shown only once the paper has a link (profile.publications[0].url);
+      // the Writing section is hidden while it's empty.
+      items: pub?.url
+        ? [{ title: 'ICCIS 2025 paper', url: pub.url, subtitle: pub.url, initial: 'P', color: '#7A4FE0' }]
         : [],
     },
     {
