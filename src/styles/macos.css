@@ -853,3 +853,63 @@ html[data-transparency='frosted'] .dock {
 .shell-layer .menu {
   pointer-events: auto;
 }
+
+/* notification banner */
+.mac-notification {
+  position: absolute;
+  top: calc(var(--menubar-h) + 10px);
+  right: 12px;
+  z-index: 55000;
+  width: 350px;
+  border-radius: 18px;
+  background: var(--glass-bg-strong);
+  box-shadow: var(--shadow-menu), 0 12px 40px rgb(0 0 0 / 0.18);
+  color: var(--text-primary);
+}
+.mac-notification-body {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.35;
+  cursor: pointer;
+}
+.mac-notification-body img {
+  border-radius: 9px;
+  flex: none;
+}
+.mac-notification-body > span {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+}
+.mac-notification-body strong {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.mac-notification-body small {
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+.mac-notification-close {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--glass-bg-strong);
+  box-shadow: var(--shadow-menu);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.mac-notification:hover .mac-notification-close,
+.mac-notification-close:focus-visible {
+  opacity: 1;
+}

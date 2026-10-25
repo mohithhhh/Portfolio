@@ -1,5 +1,41 @@
 [
   {
+    "slug": "provenance",
+    "name": "Provenance",
+    "kind": "Ensemble AI-content detection suite",
+    "start": "2026-10",
+    "end": "2026-10",
+    "summary": "Ensemble AI-content detector (GPT-2 perplexity, conformally calibrated classifier, C2PA, watermarking) with per-sentence attribution and an Attack Lab that stress-tests every detector.",
+    "tags": ["GPT-2", "Conformal prediction", "C2PA", "FastAPI", "Next.js", "SQLite", "Docker"],
+    "highlights": ["Per-sentence attribution", "Attack Lab with T5 paraphrase attacks", "Semantic retrieval ledger"],
+    "repo": null,
+    "demo": "https://provenance.mohithog7.workers.dev/"
+  },
+  {
+    "slug": "il-colosseo",
+    "name": "Il Colosseo",
+    "kind": "Real-time multi-agent AI debate arena",
+    "start": "2026-08",
+    "end": "2026-08",
+    "summary": "Three Gemini agents (two debaters and a judge) argue over three rounds, grounded in live web research and streamed over FastAPI + SSE, with debates in 10 Indian languages.",
+    "tags": ["Gemini", "Multi-agent", "Tavily", "FastAPI", "SSE", "Vercel"],
+    "highlights": ["3 agents, 3 rounds", "Live web research grounding", "10 Indian languages with voice"],
+    "repo": null,
+    "demo": "https://ilcolosseo.vercel.app/"
+  },
+  {
+    "slug": "dawaisathi",
+    "name": "DawaiSathi",
+    "kind": "Multilingual AI medicine explainer",
+    "start": "2026-07",
+    "end": "2026-07",
+    "summary": "Consumer pharma MVP (10+ users): snap a strip or type a medicine name to get plain-language usage, side effects and warnings in 11 Indian languages via Gemini.",
+    "tags": ["Gemini", "Next.js 14", "Supabase", "PostgreSQL", "Razorpay", "SSE", "Vercel"],
+    "highlights": ["10+ users", "11 Indian languages", "Tiered pricing with Razorpay"],
+    "repo": null,
+    "demo": "https://dawaisathi.vercel.app/"
+  },
+  {
     "slug": "temporal-belief-dynamics-bert",
     "name": "Temporal Belief Dynamics in BERT",
     "kind": "Research project",
@@ -8,30 +44,6 @@
     "summary": "Mapped how BERT's internal \"beliefs\" evolve across 10 fine-tuning epochs with graph-theoretic networks and 2D embeddings. Published at ICCIS 2025 (Springer LNCS).",
     "tags": ["BERT", "Interpretability", "Graph theory", "Embeddings", "Research"],
     "highlights": ["Accepted at ICCIS 2025, BITS Pilani Goa (Springer LNCS)", "10 fine-tuning epochs analysed"],
-    "repo": null,
-    "demo": null
-  },
-  {
-    "slug": "arseniccure",
-    "name": "ArsenicCure",
-    "kind": "AI-powered arsenic skin lesion detection and severity grading",
-    "start": "2024-09",
-    "end": null,
-    "summary": "Hybrid ResNet-18 + MobileNet-v2 + ViT model in PyTorch: 88.33% test accuracy, F1 0.88 on 3,462 skin lesion images across four severity classes.",
-    "tags": ["PyTorch", "ResNet-18", "MobileNet-v2", "ViT", "Grad-CAM", "FastAPI", "Docker", "MongoDB"],
-    "highlights": ["88.33% test accuracy", "F1-score 0.88", "3,462 images, 4 severity classes"],
-    "repo": null,
-    "demo": null
-  },
-  {
-    "slug": "multimodal-cyberbullying-detection",
-    "name": "Multimodal Cyberbullying Identification",
-    "kind": "Advanced multimodal deep learning framework for proactive cyberbullying identification",
-    "start": "2024-10",
-    "end": "2024-10",
-    "summary": "Multimodal model combining an LSTM for text with ResNet50 image features to predict cyberbullying behaviour, reaching 85% detection accuracy.",
-    "tags": ["Python", "Keras", "TensorFlow", "LSTM", "ResNet50"],
-    "highlights": ["85% detection accuracy", "Multi-Modal Hate Speech Dataset"],
     "repo": null,
     "demo": null
   }

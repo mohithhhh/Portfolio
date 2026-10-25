@@ -9,6 +9,7 @@ import {
   experienceSchema,
   fsNodeSchema,
   noteSchema,
+  openSourceSchema,
   profileSchema,
   projectSchema,
   skillsSchema,
@@ -34,6 +35,8 @@ const projects = check('content/projects/index.json', z.array(projectSchema), re
 const experience =
   check('content/experience/index.json', z.array(experienceSchema), readJson('content/experience/index.json')) ?? []
 const notes = check('content/notes/index.json', z.array(noteSchema), readJson('content/notes/index.json')) ?? []
+const openSource =
+  check('content/opensource/index.json', z.array(openSourceSchema), readJson('content/opensource/index.json')) ?? []
 const tree = check('content/filesystem.json', fsNodeSchema, readJson('content/filesystem.json'))
 
 const documents: Record<string, string> = {}
@@ -47,6 +50,7 @@ const addDoc = (path: string) => {
 for (const p of projects) addDoc(`content/projects/${p.slug}.mdx`)
 for (const e of experience) addDoc(`content/experience/${e.slug}.mdx`)
 for (const n of notes) addDoc(`content/notes/${n.slug}.mdx`)
+for (const o of openSource) addDoc(`content/opensource/${o.slug}.mdx`)
 
 if (profile && !projects.some((p) => p.slug === profile.currentProject)) {
   errors.push(`profile.currentProject "${profile.currentProject}" is not a project slug`)

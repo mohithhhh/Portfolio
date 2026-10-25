@@ -173,6 +173,7 @@ async function main() {
     'folder-applications': 'layout-grid',
     'folder-home': 'house',
     'folder-certificates': 'award',
+    'folder-opensource': 'git-pull-request',
   }
   for (const [name, g] of Object.entries(folders)) write(icons, `${name}.svg`, await folderIcon(g))
 

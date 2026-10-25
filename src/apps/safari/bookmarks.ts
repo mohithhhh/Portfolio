@@ -1,4 +1,4 @@
-import { profile, projects } from '@/content'
+import { openSource, profile, projects } from '@/content'
 import { brandOf, type Brand } from '@/ui/BrandIcon'
 
 export type Bookmark = { title: string; url: string | null; subtitle: string; initial: string; color: string; brand?: Brand }
@@ -44,12 +44,20 @@ export function bookmarkSections(origin: string): Array<{ title: string; items: 
     },
     {
       title: 'Projects',
-      items: projects.map((p) => ({
-        title: p.name,
-        url: `${origin}/projects/${p.slug}`,
-        subtitle: p.repo ?? `${origin.replace(/^https?:\/\//, '')}/projects/${p.slug}`,
-        initial: p.name[0]!,
-        color: '#2F9E5B',
+      items: projects.map((p) => {
+        const url = p.demo ?? p.repo ?? `${origin}/projects/${p.slug}`
+        return { title: p.name, url, subtitle: url.replace(/^https?:\/\//, ''), initial: p.name[0]!, color: '#2F9E5B' }
+      }),
+    },
+    {
+      title: 'Open Source',
+      items: openSource.map((o) => ({
+        title: `${o.project} PR`,
+        url: o.url,
+        subtitle: o.url.replace(/^https?:\/\/(www\.)?github\.com\//, ''),
+        initial: o.project[0]!.toUpperCase(),
+        color: '#FFFFFF',
+        brand: 'github' as const,
       })),
     },
   ]

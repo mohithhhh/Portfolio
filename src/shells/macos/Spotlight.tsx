@@ -31,7 +31,9 @@ function SpotlightPanel({ onClose }: { onClose: () => void }) {
     return [{ cat: 'Top Hit', hit: top! }, ...[...groups.entries()].flatMap(([cat, hs]) => hs.map((hit) => ({ cat, hit })))]
   }, [hits])
 
-  useEffect(() => inputRef.current?.focus(), [])
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
   const selected = ordered[Math.min(active, ordered.length - 1)]?.hit
 
   const go = (hit?: SearchHit) => {

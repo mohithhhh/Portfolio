@@ -34,7 +34,8 @@ describe('terminal parser', () => {
 
   it('prints markdown documents with cat', () => {
     expect(text('cat Desktop/README.md')).toContain('Start here')
-    expect(text('cat Projects/ArsenicCure/README.md')).toContain('88.33% test accuracy')
+    expect(text('cat Projects/Provenance/README.md')).toContain('Attack Lab')
+    expect(text('cat "Projects/Il Colosseo/Live Site.webloc"')).toBe('https://ilcolosseo.vercel.app/')
     expect(text('cat Desktop/Resume.pdf')).toContain('binary')
     expect(text('cat Projects')).toContain('Is a directory')
   })
@@ -47,9 +48,17 @@ describe('terminal parser', () => {
     expect(text('open -a Photoshop')).toContain('Unable to find application')
   })
 
+  it('lists projects, open source and contact details', () => {
+    expect(text('projects')).toContain('https://dawaisathi.vercel.app/')
+    expect(text('opensource')).toContain('github.com/morluto/rea/pull/6137')
+    expect(text('oss')).toContain('pydantic-ai (21k★)')
+    expect(text('contact')).toContain('mohithog7@gmail.com')
+    expect(run('resume').open).toEqual({ nodeId: 'resume' })
+  })
+
   it('routes questions to the agent', () => {
     expect(run('ask what do you build?').ask).toBe('what do you build?')
-    expect(run('what is ArsenicCure?').ask).toBe('what is ArsenicCure?')
+    expect(run('what is Provenance?').ask).toBe('what is Provenance?')
     expect(text('ask')).toContain('usage')
   })
 

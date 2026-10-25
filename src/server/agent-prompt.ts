@@ -1,5 +1,5 @@
 import 'server-only'
-import { documents, experience, formatRange, notes, plainText, profile, projects, skills } from '@/content'
+import { documents, experience, formatRange, notes, openSource, plainText, profile, projects, skills } from '@/content'
 
 /**
  * The agent's system prompt, built from content/ only. Imported statically,
@@ -7,14 +7,21 @@ import { documents, experience, formatRange, notes, plainText, profile, projects
  */
 function knowledge(): string {
   const edu = profile.education
-    .map((e) => `- ${e.degree}, ${e.institution}, ${e.location} (${formatRange(e.start, e.end)}). Coursework: ${e.coursework.join(', ')}.`)
+    .map(
+      (e) =>
+        `- ${e.degree}, ${e.institution}, ${e.location} (${formatRange(e.start, e.end)})${e.cgpa ? `, CGPA ${e.cgpa}` : ''}. Coursework: ${e.coursework.join(', ')}.`,
+    )
     .join('\n')
   const exp = experience
     .map((e) => `### ${e.role} at ${e.company} (${e.location}, ${formatRange(e.start, e.end)})\n${plainText(documents[`content/experience/${e.slug}.mdx`] ?? '')}`)
     .join('\n\n')
   const proj = projects
-    .map((p) => `### ${p.name} (${formatRange(p.start, p.end)})\n${plainText(documents[`content/projects/${p.slug}.mdx`] ?? '')}`)
+    .map(
+      (p) =>
+        `### ${p.name} (${formatRange(p.start, p.end)})${p.demo ? ` — live at ${p.demo}` : ''}\n${plainText(documents[`content/projects/${p.slug}.mdx`] ?? '')}`,
+    )
     .join('\n\n')
+  const oss = openSource.map((o) => `- ${o.project} (${o.stars} stars): ${o.title}, ${o.url}. ${o.summary}`).join('\n')
   const pubs = profile.publications.map((p) => `- ${p.authors}, "${p.title}", ${p.venue}, ${p.location}, ${p.publisher}.`).join('\n')
   const ach = profile.achievements.map((a) => `- ${a.title} (${a.detail}).`).join('\n')
   const sk = skills.categories.map((c) => `- ${c.label}: ${c.items.join(', ')}`).join('\n')
@@ -38,6 +45,9 @@ ${exp}
 
 ## Projects
 ${proj}
+
+## Open source contributions
+${oss}
 
 ## Publications
 ${pubs}

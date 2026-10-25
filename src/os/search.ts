@@ -1,9 +1,9 @@
 // Spotlight index and fuzzy scorer over apps, files, projects, experience and notes.
-import { documents, experience, notes, plainText, projects } from '@/content'
+import { documents, experience, notes, openSource, plainText, projects } from '@/content'
 import { APPS, type AppId } from './apps-meta'
 import { displayPath, iconFor, isHidden, type FSIndex } from './fs'
 
-export type SearchCategory = 'Applications' | 'Projects' | 'Experience' | 'Notes' | 'Documents' | 'Folders'
+export type SearchCategory = 'Applications' | 'Projects' | 'Experience' | 'Open Source' | 'Notes' | 'Documents' | 'Folders'
 
 export type SearchItem = {
   key: string
@@ -55,6 +55,17 @@ export function buildIndex(ix: FSIndex): SearchItem[] {
       target: { nodeId: `experience-${e.slug}-role` },
     })
   }
+  for (const o of openSource) {
+    items.push({
+      key: `oss:${o.slug}`,
+      title: `${o.project}: ${o.title}`,
+      subtitle: o.summary,
+      category: 'Open Source',
+      icon: '/icons/folder-opensource.svg',
+      body: plainText(documents[`content/opensource/${o.slug}.mdx`] ?? ''),
+      target: { nodeId: `oss-${o.slug}-readme` },
+    })
+  }
   for (const n of notes) {
     items.push({
       key: `note:${n.slug}`,
@@ -69,8 +80,10 @@ export function buildIndex(ix: FSIndex): SearchItem[] {
   for (const node of ix.byId.values()) {
     if (isHidden(node) || node.id === 'root') continue
     if (node.type === 'file' && node.kind === 'app-shortcut') continue
-    // Project READMEs and role files are already covered above.
-    if (node.id.startsWith('project-') || node.id.startsWith('experience-')) continue
+    // Projects, roles and open-source entries have dedicated results above;
+    // their folders and README/role files would only duplicate them.
+    if (node.id.endsWith('-readme') || node.id.endsWith('-role')) continue
+    if (node.type === 'folder' && /^(project|experience|oss)-/.test(node.id)) continue
     items.push({
       key: `node:${node.id}`,
       title: node.name,
@@ -112,6 +125,7 @@ const CATEGORY_BOOST: Record<SearchCategory, number> = {
   Applications: 4,
   Projects: 6,
   Experience: 5,
+  'Open Source': 4,
   Notes: 2,
   Documents: 3,
   Folders: 1,

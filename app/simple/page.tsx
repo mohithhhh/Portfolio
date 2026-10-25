@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { experience, formatRange, notes, profile, projects, skills } from '@/content'
+import { experience, formatRange, notes, openSource, profile, projects, skills } from '@/content'
 import { MdxServer } from '@/shells/MdxServer'
 import { jsonLdScript, personJsonLd } from '@/site'
 import './simple.css'
@@ -30,6 +30,9 @@ export default function SimplePage() {
             </li>
             <li>
               <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#open-source">Open source</a>
             </li>
             <li>
               <a href="#education">Education</a>
@@ -87,6 +90,12 @@ export default function SimplePage() {
               <MdxServer source={`content/projects/${p.slug}.mdx`} demote />
               <p>
                 {formatRange(p.start, p.end)} · <Link href={`/projects/${p.slug}`}>Permalink</Link>
+                {p.demo && (
+                  <>
+                    {' · '}
+                    <a href={p.demo}>Live site</a>
+                  </>
+                )}
                 {p.repo && (
                   <>
                     {' · '}
@@ -98,6 +107,20 @@ export default function SimplePage() {
           ))}
         </section>
 
+        <section id="open-source" aria-labelledby="oss-h">
+          <h2 id="oss-h">Open source contributions</h2>
+          <ul>
+            {openSource.map((o) => (
+              <li key={o.slug} id={`oss-${o.slug}`}>
+                <strong>
+                  {o.project} ({o.stars}★)
+                </strong>{' '}
+                — {o.title}, {formatRange(o.date, o.date)}. {o.summary} <a href={o.url}>{o.url.replace(/^https?:\/\//, '')}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section id="education" aria-labelledby="edu-h">
           <h2 id="edu-h">Education</h2>
           {profile.education.map((e) => (
@@ -105,6 +128,7 @@ export default function SimplePage() {
               <h3>{e.degree}</h3>
               <p>
                 {e.institution}, {e.location} · {formatRange(e.start, e.end)}
+                {e.cgpa && ` · CGPA ${e.cgpa}`}
               </p>
               <p>Relevant coursework: {e.coursework.join(', ')}.</p>
             </article>

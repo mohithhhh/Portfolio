@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "pydantic-ai",
+    "project": "pydantic-ai",
+    "stars": "21k",
+    "title": "Azure Content-Filter Error Handling Fix",
+    "date": "2026-10",
+    "url": "https://github.com/pydantic/pydantic-ai/pull/10805",
+    "summary": "Azure Responses API prompt blocks without content_filter_result raised ModelHTTPError instead of ContentFilterError; reproduced it, wrote the fix and a regression test, merged as co-author."
+  },
+  {
+    "slug": "rea",
+    "project": "REA",
+    "stars": "358k",
+    "title": "Reconstruction Ledger Blank-Label Fix",
+    "date": "2026-10",
+    "url": "https://github.com/morluto/rea/pull/6137",
+    "summary": "Whitespace-only graph labels broke reconstruction-ledger generation in REA, an MCP/CLI reverse-engineering toolkit for AI agents; reproduced it, added regression tests for both code paths, got the fix merged."
+  }
+]

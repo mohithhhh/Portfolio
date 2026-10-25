@@ -14,7 +14,11 @@ export default function MessagesIOS({ onClose }: IosAppProps) {
   const send = useAgent((s) => s.send)
   const [text, setText] = useState('')
   const endRef = useRef<HTMLDivElement>(null)
-  useEffect(() => endRef.current?.scrollIntoView({ block: 'end' }), [messages])
+  // Block body on purpose: newer browsers return a Promise from scrollIntoView,
+  // and React would treat a returned value as the effect's cleanup function.
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: 'end' })
+  }, [messages])
 
   const submit = (t: string) => {
     if (!t.trim() || status === 'streaming') return

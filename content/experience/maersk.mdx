@@ -1,8 +1,10 @@
-# AI Intern — A.P. Moller Maersk
+# AI/ML Engineering Intern — A.P. Moller Maersk
 
-**Remote** · Jun 2025 – Jul 2025
+**On-site** · Jan 2026 – present
 
-- Developed Conversational AI and sentiment-driven classification modules by fine-tuning BERT for customer feedback analysis, enabling intelligent ticket handling and smoother customer-support workflows.
-- Fine-tuned a BERT-based NLP pipeline (**F1: 0.91**) to automate sentiment and priority detection in customer tickets, streamlining support operations and enhancing scalability for high-volume service environments.
+- Built and maintained an AI-powered document extraction pipeline (**GPT-4o vision + Azure Document Intelligence OCR**) that auto-extracts payment data from proof-of-payment documents to release cargo shipments, processing **~$800M USD** in transaction volume across **10+ countries** (Philippines, Japan, South Korea, China, Hong Kong, Macau, and others).
+- Designed a **two-pass LLM extraction architecture** with confidence-scoring and automated accept/human-review routing, achieving **90%+ extraction accuracy** while keeping manual review load low at scale.
+- Diagnosed and fixed production data-integrity bugs in financial field extraction (incorrect reference/date/account-number values) through root-cause analysis, adding deterministic validation safeguards against LLM hallucination; extended the platform to new markets end-to-end (country-specific logic, new fields, schema/database changes) without disrupting existing country pipelines.
+- Built **Grafana** dashboards for observability and **Hedwig**-based governance with proactive alerting for the product.
 
-**Stack:** BERT · NLP · Conversational AI
+**Stack:** GPT-4o vision · Azure Document Intelligence · LLM pipelines · Grafana · Hedwig

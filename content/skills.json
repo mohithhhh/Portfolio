@@ -1,15 +1,19 @@
 {
   "categories": [
-    { "id": "languages", "label": "Languages & Core Development", "items": ["Python", "SQL", "HTML/CSS", "React.js"] },
-    { "id": "ai-ml", "label": "AI/ML & Data", "items": ["PyTorch", "Keras", "TensorFlow", "Hugging Face", "Pandas", "LLM", "NLP", "RAG", "LangChain"] },
-    { "id": "backend", "label": "Backend, Databases & Streaming", "items": ["FastAPI", "MongoDB", "Node.js", "MySQL", "Apache Kafka"] },
-    { "id": "devops", "label": "DevOps & Tools", "items": ["Docker", "Kubernetes", "Git", "Jupyter Notebooks", "VS Code", "Wireshark"] }
+    { "id": "languages", "label": "Languages & Core Development", "items": ["Python", "SQL", "HTML/CSS", "React", "JavaScript", "TypeScript", "Next.js"] },
+    {
+      "id": "ai-ml",
+      "label": "AI/ML & Data",
+      "items": ["PyTorch", "Keras", "TensorFlow", "Hugging Face", "Pandas", "LLM", "NLP", "API engineering", "Prompt Engineering", "Multi-Agent Systems", "Claude Code", "OpenCode", "Copilot"]
+    },
+    { "id": "backend", "label": "Backend, Databases & Streaming", "items": ["FastAPI", "MongoDB", "Node.js", "MySQL", "PostgreSQL", "Supabase", "REST APIs", "SSE"] },
+    { "id": "devops", "label": "Cloud, DevOps & Tools", "items": ["Docker", "Git", "Azure", "Vercel", "Bruno", "Grafana"] }
   ],
   "specRows": [
-    { "label": "Chip", "value": "PyTorch · TensorFlow · Keras · Hugging Face" },
-    { "label": "Memory", "value": "LLM · NLP · RAG · LangChain" },
-    { "label": "Graphics", "value": "Python · SQL · React.js · HTML/CSS" },
-    { "label": "Storage", "value": "MongoDB · MySQL · Apache Kafka" },
-    { "label": "Serial Number", "value": "Docker · Kubernetes · FastAPI · Git" }
+    { "label": "Chip", "value": "PyTorch · Hugging Face · TensorFlow · Keras" },
+    { "label": "Memory", "value": "LLM · NLP · Multi-Agent Systems · Prompt Engineering" },
+    { "label": "Graphics", "value": "TypeScript · Next.js · React · Python" },
+    { "label": "Storage", "value": "PostgreSQL · Supabase · MongoDB · MySQL" },
+    { "label": "Serial Number", "value": "FastAPI · Docker · Azure · Vercel · Grafana" }
   ]
 }

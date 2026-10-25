@@ -1,0 +1,6 @@
+# pydantic-ai — Azure Content-Filter Error Handling Fix
+
+**pydantic-ai (21k★)** · Oct 2026 · [pydantic/pydantic-ai#10805](https://github.com/pydantic/pydantic-ai/pull/10805)
+
+- Fixed an Azure Responses API bug where prompt blocks without `content_filter_result` raised `ModelHTTPError` instead of `ContentFilterError`.
+- Reproduced the issue, wrote the fix and a regression test, and merged it as co-author.

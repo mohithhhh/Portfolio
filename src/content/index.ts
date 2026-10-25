@@ -7,12 +7,14 @@ import skillsJson from '@content/skills.json'
 import projectsJson from '@content/projects/index.json'
 import experienceJson from '@content/experience/index.json'
 import notesJson from '@content/notes/index.json'
+import openSourceJson from '@content/opensource/index.json'
 import filesystemJson from '@content/filesystem.json'
 import documentsJson from '@/generated/documents.json'
 import {
   experienceSchema,
   fsNodeSchema,
   noteSchema,
+  openSourceSchema,
   profileSchema,
   projectSchema,
   skillsSchema,
@@ -26,6 +28,7 @@ export const skills = skillsSchema.parse(skillsJson)
 export const projects = z.array(projectSchema).parse(projectsJson)
 export const experience = z.array(experienceSchema).parse(experienceJson)
 export const notes = z.array(noteSchema).parse(notesJson)
+export const openSource = z.array(openSourceSchema).parse(openSourceJson)
 export const filesystem = fsNodeSchema.parse(filesystemJson) as FSFolder
 /** Raw markdown of every document, keyed by its path under the repo (e.g. content/projects/x.mdx). */
 export const documents: Record<string, string> = documentsJson

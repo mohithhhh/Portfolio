@@ -84,6 +84,7 @@ export const profileSchema = z.object({
       start: isoMonth,
       end: isoMonth,
       coursework: z.array(z.string()),
+      cgpa: z.string().optional(),
     }),
   ),
   publications: z.array(
@@ -133,6 +134,16 @@ export const experienceSchema = z.object({
   tags: z.array(z.string()),
 })
 
+export const openSourceSchema = z.object({
+  slug,
+  project: z.string(),
+  stars: z.string(),
+  title: z.string(),
+  date: isoMonth,
+  url: z.url(),
+  summary: z.string(),
+})
+
 export const noteSchema = z.object({
   slug,
   title: z.string(),
@@ -146,3 +157,4 @@ export type Skills = z.infer<typeof skillsSchema>
 export type Project = z.infer<typeof projectSchema>
 export type Experience = z.infer<typeof experienceSchema>
 export type Note = z.infer<typeof noteSchema>
+export type OpenSource = z.infer<typeof openSourceSchema>

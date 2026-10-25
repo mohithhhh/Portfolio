@@ -30,11 +30,12 @@ test('navigates Finder to a project and opens its README', async ({ page }) => {
   await expect(windowByTitle(page, 'mohith')).toBeVisible()
   await finder.getByTestId('finder-sidebar-projects').click()
   await expect(finder.getByTestId('finder-title')).toHaveText('Projects')
-  await finder.getByTestId('finder-item-project-arseniccure').dblclick()
-  await expect(finder.getByTestId('finder-title')).toHaveText('ArsenicCure')
-  await finder.getByTestId('finder-item-project-arseniccure-readme').dblclick()
+  await finder.getByTestId('finder-item-project-provenance').dblclick()
+  await expect(finder.getByTestId('finder-title')).toHaveText('Provenance')
+  await expect(finder.getByTestId('finder-item-project-provenance-site')).toBeVisible()
+  await finder.getByTestId('finder-item-project-provenance-readme').dblclick()
   const doc = windowByTitle(page, 'README.md')
-  await expect(doc.getByRole('heading', { name: 'ArsenicCure' })).toBeVisible()
+  await expect(doc.getByRole('heading', { name: 'Provenance' })).toBeVisible()
   await expect(page.getByTestId('menubar-app-name')).toHaveText('TextEdit')
 })
 
@@ -142,7 +143,7 @@ test('Terminal runs commands and asks the agent', async ({ page }) => {
   await input.press('Enter')
   await input.fill('ls')
   await input.press('Enter')
-  await expect(page.getByTestId('terminal')).toContainText('ArsenicCure/')
+  await expect(page.getByTestId('terminal')).toContainText('Provenance/')
   await input.fill('frobnicate the widgets')
   await input.press('Enter')
   await expect(page.getByTestId('terminal')).toContainText('I build ML systems.')
@@ -162,9 +163,9 @@ test('Mail explains failures and offers a mailto link', async ({ page }) => {
 })
 
 test('deep link opens the project in Finder and TextEdit', async ({ page }) => {
-  await boot(page, '/projects/arseniccure')
-  await expect(windowByTitle(page, 'ArsenicCure')).toBeVisible()
-  await expect(windowByTitle(page, 'README.md').getByRole('heading', { name: 'ArsenicCure' })).toBeVisible()
+  await boot(page, '/projects/provenance')
+  await expect(windowByTitle(page, 'Provenance')).toBeVisible()
+  await expect(windowByTitle(page, 'README.md').getByRole('heading', { name: 'Provenance' })).toBeVisible()
 })
 
 test('Activity Monitor shows an empty state without stats storage', async ({ page }) => {

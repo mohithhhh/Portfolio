@@ -11,6 +11,7 @@ import type { InitialAction } from '../types'
 import { Desktop } from './Desktop'
 import { Dock } from './Dock'
 import { MenuBar } from './MenuBar'
+import { PitchNotification } from './Notification'
 import { AppSwitcher, ContextMenuHost, SheetHost } from './Overlays'
 import { QuickLook } from './QuickLook'
 import { Shortcuts } from './Shortcuts'
@@ -76,6 +77,7 @@ export default function MacShell({ initial }: { initial?: InitialAction }) {
       <motion.div {...slide(110)} className="shell-layer" style={{ zIndex: 40000 }}>
         <Dock />
       </motion.div>
+      <PitchNotification />
       <Spotlight />
       <QuickLook />
       <ContextMenuHost />

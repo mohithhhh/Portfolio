@@ -31,7 +31,8 @@ describe('virtual filesystem', () => {
     expect(resolvePath(vfs, 'projects', '..')?.id).toBe(HOME_ID)
     expect(resolvePath(vfs, 'projects', '~/Desktop')?.id).toBe('desktop')
     expect(resolvePath(vfs, 'projects', '/Users/mohith/Documents/Certificates')?.id).toBe('certificates')
-    expect(resolvePath(vfs, 'projects', './ArsenicCure/README.md')?.id).toBe('project-arseniccure-readme')
+    expect(resolvePath(vfs, 'projects', './Provenance/README.md')?.id).toBe('project-provenance-readme')
+    expect(resolvePath(vfs, HOME_ID, 'Open Source/pydantic-ai/Pull Request.webloc')?.id).toBe('oss-pydantic-ai-pr')
     expect(resolvePath(vfs, HOME_ID, 'desktop')?.id).toBe('desktop') // case-insensitive fallback
     expect(resolvePath(vfs, HOME_ID, 'Nope')).toBeUndefined()
     expect(resolvePath(vfs, HOME_ID, 'Desktop/Resume.pdf/x')).toBeUndefined()

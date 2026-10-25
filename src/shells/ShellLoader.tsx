@@ -28,6 +28,9 @@ export function ShellLoader({ initial }: { initial?: InitialAction }) {
     if (!shell) return
     useSystem.getState().setShell(shell)
     document.body.classList.add('os')
+    // The semantic summary stays for crawlers and no-JS visitors, but once the
+    // shell runs it must not take keyboard focus; the skip link leads to /simple.
+    document.querySelectorAll('.fallback').forEach((el) => el.setAttribute('inert', ''))
   }, [shell])
   return (
     <>

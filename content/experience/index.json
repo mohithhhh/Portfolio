@@ -2,12 +2,12 @@
   {
     "slug": "maersk",
     "company": "A.P. Moller Maersk",
-    "role": "AI Intern",
-    "location": "Remote",
-    "start": "2025-06",
-    "end": "2025-07",
-    "summary": "Fine-tuned BERT for customer-feedback sentiment and ticket priority detection (F1 0.91).",
-    "tags": ["BERT", "NLP", "Conversational AI", "Sentiment analysis"]
+    "role": "AI/ML Engineering Intern",
+    "location": "On-site",
+    "start": "2026-01",
+    "end": null,
+    "summary": "AI document-extraction pipeline (GPT-4o vision + Azure Document Intelligence) that releases cargo shipments, processing ~$800M USD across 10+ countries at 90%+ extraction accuracy.",
+    "tags": ["GPT-4o", "Azure Document Intelligence", "LLM extraction", "Grafana", "Production ML"]
   },
   {
     "slug": "spectov",
@@ -16,8 +16,8 @@
     "location": "Remote",
     "start": "2025-06",
     "end": "2025-07",
-    "summary": "Conversational AI and sentiment-driven classification modules built on a fine-tuned BERT pipeline (F1 0.91).",
-    "tags": ["BERT", "NLP", "Conversational AI", "Classification"]
+    "summary": "Intent engine and conversational AI modules for customer feedback, plus a fine-tuned BERT pipeline (F1 0.91) for ticket sentiment and priority.",
+    "tags": ["BERT", "NLP", "Conversational AI", "Intent detection"]
   },
   {
     "slug": "rapid-research-lab",
@@ -26,7 +26,7 @@
     "location": "On-site",
     "start": "2025-05",
     "end": "2025-06",
-    "summary": "Research on \"Temporal Belief Dynamics in BERT\" using a graph-theoretic approach to interpretable representation drift.",
+    "summary": "Research on \"Temporal Belief Dynamics in BERT\": graph-theoretic analysis of representation drift, accepted at ICCIS 2025.",
     "tags": ["Research", "BERT", "Interpretability", "Graph theory"]
   }
 ]

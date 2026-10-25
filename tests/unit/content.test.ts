@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { documents, experience, filesystem, formatRange, fsNodeSchema, plainText, profile, projects, skills } from '@/content'
+import { documents, experience, filesystem, formatRange, fsNodeSchema, openSource, plainText, profile, projects, skills } from '@/content'
 import { buildIndex, fuzzyScore, search } from '@/os/search'
 import { listChildren } from '@/os/fs'
 import { vfs } from '@/os/vfs'
@@ -30,13 +30,16 @@ describe('content', () => {
 
   it('carries every resume fact that the spec maps', () => {
     const all = Object.values(documents).join('\n')
-    for (const fact of ['F1: 0.91', '88.33%', '3,462', '85% detection accuracy', '10 fine-tuning epochs', 'ICCIS 2025']) {
+    for (const fact of ['F1: 0.91', '~$800M USD', '90%+ extraction accuracy', '10 Indian languages', '11 Indian languages', '10 fine-tuning epochs', 'ICCIS 2025', 'pydantic/pydantic-ai/pull/10805']) {
       expect(all.replace(/\*\*/g, '')).toContain(fact)
     }
     expect(profile.education[0]?.institution).toBe('PES University')
+    expect(profile.education[0]?.cgpa).toBe('8.16')
+    expect(openSource.map((o) => o.project)).toEqual(['pydantic-ai', 'REA'])
+    expect(projects.filter((p) => p.demo).length).toBe(3)
     expect(profile.publications[0]?.publisher).toBe('Springer LNCS')
     expect(profile.achievements[0]?.title).toContain('HACK-AI')
-    expect(skills.categories.flatMap((c) => c.items)).toEqual(expect.arrayContaining(['Python', 'PyTorch', 'FastAPI', 'Docker', 'Wireshark']))
+    expect(skills.categories.flatMap((c) => c.items)).toEqual(expect.arrayContaining(['Python', 'PyTorch', 'FastAPI', 'Docker', 'Next.js', 'Supabase', 'Grafana']))
   })
 
   it('formats ranges and strips markdown', () => {
@@ -49,11 +52,13 @@ describe('content', () => {
 describe('search', () => {
   const index = buildIndex(vfs)
   it('scores prefixes above subsequences', () => {
-    expect(fuzzyScore('arsen', 'ArsenicCure')).toBeGreaterThan(fuzzyScore('acr', 'ArsenicCure'))
-    expect(fuzzyScore('xyz', 'ArsenicCure')).toBe(0)
+    expect(fuzzyScore('prov', 'Provenance')).toBeGreaterThan(fuzzyScore('pnc', 'Provenance'))
+    expect(fuzzyScore('xyz', 'Provenance')).toBe(0)
   })
   it('finds projects, apps and files', () => {
-    expect(search(index, 'arsenic')[0]?.title).toBe('ArsenicCure')
+    expect(search(index, 'provenance')[0]?.title).toBe('Provenance')
+    expect(search(index, 'pydantic')[0]?.category).toBe('Open Source')
+    expect(search(index, 'debate')[0]?.title).toBe('Il Colosseo')
     expect(search(index, 'termin')[0]?.title).toBe('Terminal')
     expect(search(index, 'resume').some((h) => h.title === 'Resume.pdf')).toBe(true)
     expect(search(index, 'maersk')[0]?.category).toBe('Experience')

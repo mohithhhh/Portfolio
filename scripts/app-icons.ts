@@ -102,55 +102,56 @@ function gearPath(cx: number, cy: number, teeth: number, outer: number, inner: n
 
 const finder = () =>
   icon({
+    // Two-tone blue body (light left, deep right) with an original folder-and-lens mark.
     body: [
-      [0, '#8EDBFF'],
-      [0.55, '#3C9EF5'],
-      [1, '#1557D6'],
+      [0, '#7FD0FF'],
+      [1, '#2A7DEB'],
     ],
-    defs: `${lin('fb', [[0, '#1F6FD8'], [1, '#0E47A8']])}${lin('ff', [[0, '#D9F1FF'], [0.5, '#A8DCFF'], [1, '#6DBBF5']])}${lin('lens', [[0, '#fff', 0.85], [1, '#CDEBFF', 0.35]])}${lin('handle', [[0, '#F4F6FA'], [1, '#9AA6B6']], 0, 0, 1, 0)}`,
+    defs: `${lin('left', [[0, '#A8E1FF'], [1, '#55B1F7']])}${lin('right', [[0, '#2D8BF0'], [1, '#0F4FC6']])}${lin('fb', [[0, '#1F6FD8'], [1, '#0E47A8']])}${lin('ff', [[0, '#F2FAFF'], [0.5, '#CDEBFF'], [1, '#94CDF7']])}${lin('lens', [[0, '#fff', 0.9], [1, '#CDEBFF', 0.35]])}${lin('handle', [[0, '#F4F6FA'], [1, '#9AA6B6']], 0, 0, 1, 0)}`,
     art: `
+<rect x="0" y="0" width="50" height="100" fill="url(#left)"/>
+<path d="M50 0h50v100H50c4-12 6-24 6-50S54 12 50 0Z" fill="url(#right)"/>
 <g filter="url(#art)">
-  <path d="M24 32a4 4 0 0 1 4-4h14.5a4 4 0 0 1 3.1 1.5l2.6 3.2H72a4 4 0 0 1 4 4V70a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4Z" fill="url(#fb)"/>
-  <path d="M24 42a4 4 0 0 1 4-4h44a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4Z" fill="url(#ff)"/>
-  <path d="M24.4 42a3.6 3.6 0 0 1 3.6-3.6h44" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width=".8"/>
+  <path d="M25 33a4 4 0 0 1 4-4h13.5a4 4 0 0 1 3.1 1.5l2.6 3.2H71a4 4 0 0 1 4 4V69a4 4 0 0 1-4 4H29a4 4 0 0 1-4-4Z" fill="url(#fb)"/>
+  <path d="M25 42a4 4 0 0 1 4-4h42a4 4 0 0 1 4 4v27a4 4 0 0 1-4 4H29a4 4 0 0 1-4-4Z" fill="url(#ff)"/>
+  <path d="M25.4 42a3.6 3.6 0 0 1 3.6-3.6h42" fill="none" stroke="#fff" stroke-width=".8"/>
 </g>
 <g filter="url(#art)">
-  <path d="M66.5 66.5 76 76" stroke="url(#handle)" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="58" cy="58" r="12" fill="url(#lens)" stroke="#fff" stroke-width="3.2"/>
-  <path d="M51 53.5a8.5 8.5 0 0 1 7-4.5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
+  <path d="M65.5 65.5 75 75" stroke="url(#handle)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="57" cy="57" r="11.5" fill="url(#lens)" stroke="#fff" stroke-width="3.2"/>
+  <path d="M50.5 52.5a8 8 0 0 1 6.5-4.2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>
 </g>`,
   })
 
 const safari = () => {
-  const meridians = [-1, -0.55, 0, 0.55, 1]
-    .map((k) => `<ellipse cx="50" cy="50" rx="${(24 * Math.abs(k)).toFixed(2)}" ry="24" fill="none" stroke="#1E7BE0" stroke-opacity=".45" stroke-width=".8"/>`)
-    .join('')
-  const parallels = [-16, -8, 0, 8, 16]
-    .map((y) => {
-      const r = Math.sqrt(24 * 24 - y * y)
-      return `<path d="M${(50 - r).toFixed(2)} ${50 + y}H${(50 + r).toFixed(2)}" stroke="#1E7BE0" stroke-opacity=".45" stroke-width=".8"/>`
-    })
-    .join('')
+  // A navigation compass: blue dial, fine tick ring, red/white needle. Original drawing.
+  const ticks = Array.from({ length: 72 }, (_, i) => {
+    const a = (i / 72) * Math.PI * 2
+    const long = i % 9 === 0
+    const r1 = long ? 25.5 : 27
+    const r2 = 29
+    const p = (r: number) => `${(50 + r * Math.cos(a)).toFixed(2)} ${(50 + r * Math.sin(a)).toFixed(2)}`
+    return `<path d="M${p(r1)}L${p(r2)}" stroke="#fff" stroke-opacity="${long ? 0.95 : 0.55}" stroke-width="${long ? 1 : 0.5}"/>`
+  }).join('')
   return icon({
     body: [
-      [0, '#9BE3FF'],
-      [0.5, '#39A2F5'],
-      [1, '#1250CF'],
+      [0, '#FAFCFE'],
+      [1, '#D9E1EA'],
     ],
-    defs: `${rad('globe', [[0, '#FFFFFF'], [0.7, '#E6F3FF'], [1, '#B9D9F7']], 0.42, 0.36, 0.7)}${lin('land', [[0, '#6FD39A'], [1, '#2FA56A']])}${lin('orbit', [[0, '#FFE58A'], [1, '#FFB23E']], 0, 0, 1, 1)}<clipPath id="globe-clip"><circle cx="50" cy="50" r="24"/></clipPath>`,
+    defs: `${rad('dial', [[0, '#5BC8FF'], [0.65, '#1E8BF0'], [1, '#0B5AC9']], 0.45, 0.35, 0.75)}${lin('north', [[0, '#FF5A4E'], [1, '#D41E1E']], 0, 0, 1, 0)}${lin('south', [[0, '#FFFFFF'], [1, '#D7DDE5']], 0, 0, 1, 0)}`,
     art: `
 <g filter="url(#art)">
-  <circle cx="50" cy="50" r="25" fill="url(#globe)"/>
+  <circle cx="50" cy="50" r="32" fill="url(#dial)"/>
 </g>
-<g clip-path="url(#globe-clip)">
-    <path d="M33 40c4-6 11-8 15-6s2 7-3 9-4 7-9 7-7-5-3-10Zm22 10c5-2 12 0 14 5s-3 11-8 11-6-4-7-8 0-7 1-8Zm4-19c4 1 8 4 7 6s-6 1-8-1 0-5 1-5Z" fill="url(#land)" opacity=".9"/>
-    ${meridians}${parallels}
+<circle cx="50" cy="50" r="31.4" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".6"/>
+${ticks}
+<g filter="url(#art-soft)" transform="rotate(42 50 50)">
+  <path d="M50 22 54 50H46Z" fill="url(#north)"/>
+  <path d="M50 78 46 50h8Z" fill="url(#south)"/>
+  <path d="M50 22 50 50H46Z" fill="#000" opacity=".12"/>
+  <path d="M50 78 50 50h4Z" fill="#000" opacity=".1"/>
 </g>
-<circle cx="50" cy="50" r="24" fill="none" stroke="#fff" stroke-width="1.2" opacity=".9"/>
-<g filter="url(#art-soft)">
-  <ellipse cx="50" cy="50" rx="34" ry="9" fill="none" stroke="url(#orbit)" stroke-width="2.4" transform="rotate(-24 50 50)" stroke-dasharray="58 12"/>
-  <circle cx="79" cy="38" r="3.2" fill="#FFD25E" stroke="#fff" stroke-width="1"/>
-</g>`,
+<circle cx="50" cy="50" r="2.4" fill="#fff" stroke="#9AA6B6" stroke-width=".6"/>`,
   })
 }
 
@@ -172,31 +173,21 @@ const mail = () =>
   })
 
 const notes = () => {
-  const lines = [44, 52, 60, 68].map((y) => `<path d="M30 ${y}H70" stroke="#D9D2BF" stroke-width="1.2"/>`).join('')
-  const holes = [30, 38, 46, 54, 62, 70].map((x) => `<circle cx="${x}" cy="30" r="1.6" fill="#8A6A10" opacity=".55"/>`).join('')
+  // Ruled notepad: warm yellow header band, perforation and grey rules. Original drawing.
+  const rules = [48, 56, 64, 72, 80].map((y) => `<path d="M10 ${y}H90" stroke="#D8D5CC" stroke-width=".9"/>`).join('')
+  const perf = Array.from({ length: 19 }, (_, i) => `<circle cx="${13 + i * 4.1}" cy="36.5" r=".8" fill="#B78A12" opacity=".5"/>`).join('')
   return icon({
     body: [
-      [0, '#FFE98C'],
-      [0.55, '#FDC93C'],
-      [1, '#F2A51C'],
+      [0, '#FFFFFF'],
+      [1, '#EEEDE8'],
     ],
-    defs: `${lin('paper', [[0, '#FFFFFF'], [1, '#F1ECE0']])}${lin('pencil', [[0, '#FF8A5C'], [1, '#E0522B']], 0, 0, 1, 0)}`,
+    defs: `${lin('band', [[0, '#FFE170'], [1, '#F6C02C']])}`,
     art: `
-<g filter="url(#art)" transform="rotate(-4 50 52)">
-  <rect x="24" y="26" width="52" height="54" rx="4" fill="url(#paper)"/>
-  <rect x="24" y="26" width="52" height="9" rx="4" fill="#FBD454"/>
-  <rect x="24" y="31" width="52" height="4" fill="#FBD454"/>
-  ${holes}
-  ${lines}
-  <path d="M30 44h26M30 52h32M30 60h20" stroke="#6E6758" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>
-</g>
-<g filter="url(#art)" transform="rotate(38 66 60)">
-  <rect x="62" y="36" width="8" height="34" rx="1.2" fill="url(#pencil)"/>
-  <rect x="62" y="36" width="8" height="5" rx="1.2" fill="#F4B8C6"/>
-  <rect x="62" y="40" width="8" height="2" fill="#C9CED6"/>
-  <path d="M62 70h8l-4 8Z" fill="#F3D9A6"/>
-  <path d="M64.7 75.4h2.6L66 78Z" fill="#3B3B3B"/>
-</g>`,
+<rect x="0" y="0" width="100" height="35" fill="url(#band)"/>
+<rect x="0" y="33.5" width="100" height="1.5" fill="#000" opacity=".08"/>
+${perf}
+${rules}
+<path d="M18 48h44M18 56h52M18 64h34" stroke="#8B867A" stroke-width="1.6" stroke-linecap="round" opacity=".45"/>`,
   })
 }
 
@@ -343,16 +334,15 @@ const activityMonitor = () =>
 const messages = () =>
   icon({
     body: [
-      [0, '#8CF5A5'],
-      [0.5, '#35D05F'],
-      [1, '#12A53E'],
+      [0, '#86F59E'],
+      [0.5, '#38D35F'],
+      [1, '#14A63E'],
     ],
-    defs: `${lin('bub', [[0, '#FFFFFF'], [1, '#E6F3EA']])}`,
+    defs: `${lin('bub', [[0, '#FFFFFF'], [1, '#EDF6EF']])}`,
     art: `
 <g filter="url(#art)">
-  <path d="M50 24c16.6 0 29 10.6 29 24.5S66.6 73 50 73c-3.4 0-6.7-.5-9.7-1.3L27 78l3.6-10.8C24.6 62.9 21 56.1 21 48.5 21 34.6 33.4 24 50 24Z" fill="url(#bub)"/>
-</g>
-<circle cx="39" cy="49" r="3" fill="#35C660"/><circle cx="50" cy="49" r="3" fill="#35C660" opacity=".8"/><circle cx="61" cy="49" r="3" fill="#35C660" opacity=".6"/>`,
+  <path d="M50 25c16.6 0 29.5 10.4 29.5 24S66.6 73 50 73c-3.2 0-6.3-.4-9.2-1.2-3.6 3-8.5 4.9-14.3 5.2 2.4-2.5 3.9-5.3 4.4-8.3C24.7 64.3 20.5 57 20.5 49 20.5 35.4 33.4 25 50 25Z" fill="url(#bub)"/>
+</g>`,
   })
 
 const files = () =>

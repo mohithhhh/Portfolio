@@ -55,6 +55,19 @@ export function FilePreview({ node, pdfPages }: { node: FSNode; pdfPages?: numbe
           </Suspense>
         </div>
       )
+    case 'link':
+      return (
+        <div className="grid h-full w-full place-items-center p-10 text-center">
+          <div className="grid justify-items-center gap-3">
+            <FileIcon node={node} size={96} />
+            <p className="m-0 text-[15px] font-semibold">{node.name.replace(/\.webloc$/, '')}</p>
+            <p className="m-0 break-all text-secondary">{node.source}</p>
+            <a className="btn btn-primary" href={node.source} target="_blank" rel="noopener noreferrer">
+              Open in a new tab
+            </a>
+          </div>
+        </div>
+      )
     case 'md':
       return (
         <div className="selectable w-full overflow-auto px-10 py-8">

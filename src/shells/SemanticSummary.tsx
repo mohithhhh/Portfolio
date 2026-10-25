@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { experience, formatRange, profile, projects } from '@/content'
+import { experience, formatRange, openSource, profile, projects } from '@/content'
 
 /**
  * Plain semantic summary rendered with the desktop. Visible without JS;
@@ -31,6 +31,16 @@ export function SemanticSummary() {
               {e.role}, {e.company}
             </Link>{' '}
             ({formatRange(e.start, e.end)})
+          </li>
+        ))}
+      </ul>
+      <h2>Open source</h2>
+      <ul>
+        {openSource.map((o) => (
+          <li key={o.slug}>
+            <a href={o.url}>
+              {o.project}: {o.title}
+            </a>
           </li>
         ))}
       </ul>

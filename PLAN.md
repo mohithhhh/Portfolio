@@ -18,29 +18,31 @@ Implementation record for `SPEC.md`. The owner asked for a one-shot build ("one 
 
 ## Resume → portfolio mapping
 
-Every line of `input/resume.pdf` and where it lives. "FS" means a path in `content/filesystem.json`.
+Source: `input/resume.pdf` (the October 2026 resume; it replaced the September one). Every line and where it lives. "FS" means a path in `content/filesystem.json`.
 
 | Resume line | Where it lives |
 |---|---|
-| Name "MOHITH D K" | `profile.json` → menu bar monogram menu, About This Mac, lock screen, `/simple`, JSON-LD, OG images |
-| Bangalore, Karnataka | `profile.location` → About This Mac, `/simple`, agent prompt |
-| P: 9019325337 | `profile.phone` → `/simple` contact list (also already on the old site) |
-| mohithog7@gmail.com | `profile.email` → Mail "To:", About This Mac, Safari favorites, `/simple` |
-| linkedin, Github (links) | `profile.links`. URLs taken from the previous site because the PDF shows only the words → Safari favorites, About This Mac, iOS web clips, `/simple` |
-| EDUCATION: PES University, B.Tech CSE (AI/ML), Aug 2022 – May 2026, Bangalore | `profile.education` → FS `~/Documents/Certificates/B.Tech — PES University.md`, Notes "About me", Terminal `about`, `/simple` |
+| Name, Bangalore, phone, email | `profile.json` → menu bar, About This Mac, lock screen, Mail "To:", `/simple`, JSON-LD, OG images |
+| linkedin, Github | `profile.links` (URLs from the PDF's link annotations) → Safari favorites, About This Mac, iOS web clips, `/simple` |
+| EDUCATION: PES University, B.Tech CSE (AI/ML), CGPA 8.16, Aug 2022 – May 2026 | `profile.education` (incl. `cgpa`) → FS `~/Documents/Certificates/B.Tech — PES University.md`, Notes "About me", Terminal `about`, `/simple` |
 | Relevant coursework (8 courses) | `profile.education[0].coursework` → Notes "Coursework", certificate doc, `/simple` |
-| A P Moller Maersk — AI Intern, Remote, Jun–Jul 2025, 2 bullets | `content/experience/maersk.mdx` → FS `~/Experience/A.P. Moller Maersk/role.md`, `/experience/maersk` |
-| SpectoV — AI Intern, Remote, Jun–Jul 2025, 2 bullets | `content/experience/spectov.mdx` → FS `~/Experience/SpectoV/role.md`, `/experience/spectov` (see open question 1) |
-| RAPID Research Lab — Research Intern, on-site, May–Jun 2025, 2 bullets | `content/experience/rapid-research-lab.mdx` → FS `~/Experience/RAPID Research Lab/role.md`, `/experience/rapid-research-lab` |
-| Project: Temporal Belief Dynamics in BERT, Jun–Jul 2025, 2 bullets | `content/projects/temporal-belief-dynamics-bert.mdx` → FS `~/Projects/Temporal Belief Dynamics in BERT/README.md` |
-| Project: ArsenicCure, Sep 2024 – present, 2 bullets | `content/projects/arseniccure.mdx` → FS `~/Projects/ArsenicCure/README.md`; also the iOS "Currently building" widget and Dynamic Island (`profile.currentProject`) |
-| Project: Multimodal Cyberbullying Identification, Oct 2024, 2 bullets | `content/projects/multimodal-cyberbullying-detection.mdx` → FS `~/Projects/Multimodal Cyberbullying Identification/README.md` |
-| PUBLICATIONS: M.D.K. et al., ICCIS 2025, BITS Pilani Goa, Springer LNCS | `profile.publications` → Notes "Publication: ICCIS 2025", FS `~/Documents/Certificates/ICCIS 2025 Publication.md`, Safari "Writing", project README, `/simple` |
-| TECHNICAL SKILLS (4 categories) | `skills.json` → About This Mac spec rows + "More Info…" (full list), Terminal `about`, `/simple`, agent prompt |
-| ACHIEVEMENTS: Winners, HACK-AI 24-hour Data Analytics Hackathon, PES University with Vision Karnataka Foundation | `profile.achievements` → FS `~/Documents/Certificates/HACK-AI Winners.md`, Notes "HACK-AI hackathon win", `/simple` |
-| Full resume | `public/Resume.pdf` → FS `~/Desktop/Resume.pdf` (Preview, Download button), `~/Downloads/Mohith_D_K_1.pdf`, iOS "Resume" app, `/simple` download link |
+| A P Moller Maersk — AI/ML Engineering Intern, On-site, Jan 2026 – present, 4 bullets | `content/experience/maersk.mdx` → FS `~/Experience/A.P. Moller Maersk/role.md`, `/experience/maersk`; `profile.title` |
+| SpectoV — AI Intern, Remote, Jun – Jul 2025, 2 bullets | `content/experience/spectov.mdx` → FS `~/Experience/SpectoV/role.md`, `/experience/spectov` |
+| RAPID Research Lab — Research Intern, on-site, May – Jun 2025, 2 bullets | `content/experience/rapid-research-lab.mdx` → FS `~/Experience/RAPID Research Lab/role.md` |
+| Project: Il Colosseo (Aug 2026, ilcolosseo.vercel.app), 2 bullets | `content/projects/il-colosseo.mdx` → FS `~/Projects/Il Colosseo/` (README.md, Live Site.webloc), Safari, `/projects/il-colosseo` |
+| Project: Provenance (Oct 2026, provenance.mohithog7.workers.dev), 2 bullets | `content/projects/provenance.mdx` → FS `~/Projects/Provenance/`; `profile.currentProject` (iOS widget, Dynamic Island) |
+| Project: DawaiSathi (Jul 2026, dawaisathi.vercel.app), 2 bullets | `content/projects/dawaisathi.mdx` → FS `~/Projects/DawaiSathi/` |
+| Project: Temporal Belief Dynamics in BERT, Jun – Jul 2025, 2 bullets | `content/projects/temporal-belief-dynamics-bert.mdx` → FS `~/Projects/Temporal Belief Dynamics in BERT/README.md` |
+| OPEN SOURCE: pydantic-ai (21k★) PR #10805, Oct 2026 | `content/opensource/pydantic-ai.mdx` + `index.json` → FS `~/Open Source/pydantic-ai/` (README.md, Pull Request.webloc), Safari, Terminal `opensource`, `/simple` |
+| OPEN SOURCE: REA (358k★) PR #6137, Oct 2026 | `content/opensource/rea.mdx` → FS `~/Open Source/REA/` |
+| PUBLICATIONS: ICCIS 2025, Springer LNCS | `profile.publications` → Notes, Certificates doc, Safari "Writing", project README, `/simple` |
+| TECHNICAL SKILLS (4 categories) | `skills.json` → About This Mac spec rows + "More Info…", Terminal `about`, `/simple`, agent prompt |
+| ACHIEVEMENTS: HACK-AI winners | `profile.achievements` → FS `~/Documents/Certificates/HACK-AI Winners.md`, Notes, `/simple` |
+| Full resume | `public/Resume.pdf` → FS `~/Desktop/Resume.pdf`, `~/Downloads/Mohith_resume_AI.pdf`, iOS "Resume", `/simple` download |
 
-Non-resume content, all from the owner's own previous site: the tagline "Building enterprise AI agents and ML systems…" and the photo (`public/me.jpg`, resized from 3.7 MB to 156 KB).
+Removed with the new resume: ArsenicCure and the multimodal cyberbullying project (no longer listed), and the Jun–Jul 2025 Maersk internship entry (the resume now lists the Jan 2026 role).
+
+Non-resume content, both from the owner's previous site: the tagline "Building enterprise AI agents and ML systems…" and the photo.
 
 ## Filesystem (`content/filesystem.json`)
 
@@ -49,10 +51,11 @@ Non-resume content, all from the owner's own previous site: the tagline "Buildin
 ├── Applications/            Finder.app … Activity Monitor.app (app shortcuts)
 └── Users/mohith (~)
     ├── Desktop/             Resume.pdf, README.md ("Start here"), Mohith.jpg
-    ├── Projects/<project>/  README.md          (×3)
+    ├── Projects/<project>/  README.md, Live Site.webloc   (×4; the research project has no live site)
     ├── Experience/<company>/role.md            (×3, newest first)
+    ├── Open Source/<repo>/  README.md, Pull Request.webloc (×2)
     ├── Documents/           Certificates/ (B.Tech, HACK-AI, ICCIS 2025), Keyboard Shortcuts.md
-    ├── Downloads/           Mohith_D_K_1.pdf
+    ├── Downloads/           Mohith_resume_AI.pdf
     └── .Trash/              (empty, see TODOs)
 ```
 
@@ -79,15 +82,16 @@ The spec wants side-by-side comparisons in `input/compare/`; that folder is wait
 
 ## Open questions for the owner
 
-1. **SpectoV and Maersk are identical on the resume**: same title, dates and both bullets word for word. They are reproduced exactly as written. Please send the real SpectoV bullets, or confirm both are correct.
-2. **Title.** The resume says "AI Intern" (Jun–Jul 2025), but the old site said "AI Engineer Intern @ A.P. Moller Maersk". The site now uses "AI Intern". Is the Maersk role ongoing, and under which title?
-3. **"Open to work"**: the spec requires this status item. It is on (`profile.availability.open`); set it to `false` if that is wrong.
-4. **Project repositories**: are ArsenicCure and the cyberbullying project public? If so, add their URLs.
+1. **"Open to work"**: the spec requires this status item. It is on (`profile.availability.open`); set it to `false` if that is wrong.
+2. **Current project**: the iOS Dynamic Island and widget say "Building: Provenance" (the most recent project). Change `profile.currentProject` if another one is current.
+3. **Repositories**: add public repo URLs for Il Colosseo, Provenance and DawaiSathi (`repo` in `content/projects/index.json`) to get a Repository link next to each Live Site.
+
+Resolved by the October 2026 resume: the duplicated SpectoV/Maersk bullets and the job title.
 
 ## TODOs (missing content)
 
 - `TODO(owner)`: link to the ICCIS 2025 paper (DOI or Springer page). Shown in Notes and Safari → `profile.publications[0].url`.
-- `TODO(owner)`: repository and demo links for each project → `repo` / `demo` in `content/projects/index.json`. `Repository.webloc` files will be added once they exist.
+- `TODO(owner)`: repository links for each project → `repo` in `content/projects/index.json` (live links are in).
 - `TODO(owner)`: architecture diagrams, screenshots or demo videos for projects → `public/` and `filesystem.json`.
 - `TODO(owner)`: Trash content (failed experiments and lessons learned). The Trash currently shows an empty state with this TODO.
 - `TODO(owner)`: HACK-AI date and winning project (Notes).
@@ -117,4 +121,4 @@ The spec wants side-by-side comparisons in `input/compare/`; that folder is wait
 
 ## Tier 2 backlog (needs approval)
 
-Genie minimize, edge-drag tiling (menu-driven tiling already exists), Finder column view, Control Center with a transparency slider, Mission Control, and the 20-second pitch notification.
+Genie minimize, edge-drag tiling (menu-driven tiling already exists), Finder column view, Control Center with a transparency slider and Mission Control. (The 20-second intro notification is now built: `src/shells/macos/Notification.tsx`.)

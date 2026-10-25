@@ -17,7 +17,7 @@
           "kind": "app-shortcut",
           "source": "finder",
           "opensWith": "finder",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -26,7 +26,7 @@
           "kind": "app-shortcut",
           "source": "preview",
           "opensWith": "preview",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -35,7 +35,7 @@
           "kind": "app-shortcut",
           "source": "textedit",
           "opensWith": "textedit",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -44,7 +44,7 @@
           "kind": "app-shortcut",
           "source": "notes",
           "opensWith": "notes",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -53,7 +53,7 @@
           "kind": "app-shortcut",
           "source": "mail",
           "opensWith": "mail",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -62,7 +62,7 @@
           "kind": "app-shortcut",
           "source": "terminal",
           "opensWith": "terminal",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -71,7 +71,7 @@
           "kind": "app-shortcut",
           "source": "safari",
           "opensWith": "safari",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -80,7 +80,7 @@
           "kind": "app-shortcut",
           "source": "settings",
           "opensWith": "settings",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -89,7 +89,7 @@
           "kind": "app-shortcut",
           "source": "about",
           "opensWith": "about",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         },
         {
           "type": "file",
@@ -98,7 +98,7 @@
           "kind": "app-shortcut",
           "source": "activity-monitor",
           "opensWith": "activity-monitor",
-          "modified": "2026-09-24"
+          "modified": "2026-10-25"
         }
       ]
     },
@@ -126,8 +126,8 @@
                   "kind": "pdf",
                   "source": "public/Resume.pdf",
                   "opensWith": "preview",
-                  "modified": "2026-09-24",
-                  "size": "134 KB"
+                  "modified": "2026-10-25",
+                  "size": "166 KB"
                 },
                 {
                   "type": "file",
@@ -136,7 +136,7 @@
                   "kind": "md",
                   "source": "content/docs/readme.mdx",
                   "opensWith": "textedit",
-                  "modified": "2026-09-24"
+                  "modified": "2026-10-25"
                 },
                 {
                   "type": "file",
@@ -158,6 +158,81 @@
               "children": [
                 {
                   "type": "folder",
+                  "id": "project-provenance",
+                  "name": "Provenance",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "project-provenance-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/projects/provenance.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-10-01"
+                    },
+                    {
+                      "type": "file",
+                      "id": "project-provenance-site",
+                      "name": "Live Site.webloc",
+                      "kind": "link",
+                      "source": "https://provenance.mohithog7.workers.dev/",
+                      "opensWith": "safari",
+                      "modified": "2026-10-01"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "project-il-colosseo",
+                  "name": "Il Colosseo",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "project-il-colosseo-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/projects/il-colosseo.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-08-01"
+                    },
+                    {
+                      "type": "file",
+                      "id": "project-il-colosseo-site",
+                      "name": "Live Site.webloc",
+                      "kind": "link",
+                      "source": "https://ilcolosseo.vercel.app/",
+                      "opensWith": "safari",
+                      "modified": "2026-08-01"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "project-dawaisathi",
+                  "name": "DawaiSathi",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "project-dawaisathi-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/projects/dawaisathi.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-07-01"
+                    },
+                    {
+                      "type": "file",
+                      "id": "project-dawaisathi-site",
+                      "name": "Live Site.webloc",
+                      "kind": "link",
+                      "source": "https://dawaisathi.vercel.app/",
+                      "opensWith": "safari",
+                      "modified": "2026-07-01"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
                   "id": "project-temporal-belief-dynamics-bert",
                   "name": "Temporal Belief Dynamics in BERT",
                   "children": [
@@ -169,38 +244,6 @@
                       "source": "content/projects/temporal-belief-dynamics-bert.mdx",
                       "opensWith": "textedit",
                       "modified": "2025-07-01"
-                    }
-                  ]
-                },
-                {
-                  "type": "folder",
-                  "id": "project-arseniccure",
-                  "name": "ArsenicCure",
-                  "children": [
-                    {
-                      "type": "file",
-                      "id": "project-arseniccure-readme",
-                      "name": "README.md",
-                      "kind": "md",
-                      "source": "content/projects/arseniccure.mdx",
-                      "opensWith": "textedit",
-                      "modified": "2026-09-01"
-                    }
-                  ]
-                },
-                {
-                  "type": "folder",
-                  "id": "project-multimodal-cyberbullying-detection",
-                  "name": "Multimodal Cyberbullying Identification",
-                  "children": [
-                    {
-                      "type": "file",
-                      "id": "project-multimodal-cyberbullying-detection-readme",
-                      "name": "README.md",
-                      "kind": "md",
-                      "source": "content/projects/multimodal-cyberbullying-detection.mdx",
-                      "opensWith": "textedit",
-                      "modified": "2024-10-01"
                     }
                   ]
                 }
@@ -224,7 +267,7 @@
                       "kind": "md",
                       "source": "content/experience/maersk.mdx",
                       "opensWith": "textedit",
-                      "modified": "2025-07-31"
+                      "modified": "2026-10-25"
                     }
                   ]
                 },
@@ -240,7 +283,7 @@
                       "kind": "md",
                       "source": "content/experience/spectov.mdx",
                       "opensWith": "textedit",
-                      "modified": "2025-07-31"
+                      "modified": "2025-07-01"
                     }
                   ]
                 },
@@ -256,7 +299,65 @@
                       "kind": "md",
                       "source": "content/experience/rapid-research-lab.mdx",
                       "opensWith": "textedit",
-                      "modified": "2025-06-31"
+                      "modified": "2025-06-01"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "id": "opensource",
+              "name": "Open Source",
+              "icon": "opensource",
+              "children": [
+                {
+                  "type": "folder",
+                  "id": "oss-pydantic-ai",
+                  "name": "pydantic-ai",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "oss-pydantic-ai-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/opensource/pydantic-ai.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-10-01"
+                    },
+                    {
+                      "type": "file",
+                      "id": "oss-pydantic-ai-pr",
+                      "name": "Pull Request.webloc",
+                      "kind": "link",
+                      "source": "https://github.com/pydantic/pydantic-ai/pull/10805",
+                      "opensWith": "safari",
+                      "modified": "2026-10-01"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "id": "oss-rea",
+                  "name": "REA",
+                  "children": [
+                    {
+                      "type": "file",
+                      "id": "oss-rea-readme",
+                      "name": "README.md",
+                      "kind": "md",
+                      "source": "content/opensource/rea.mdx",
+                      "opensWith": "textedit",
+                      "modified": "2026-10-01"
+                    },
+                    {
+                      "type": "file",
+                      "id": "oss-rea-pr",
+                      "name": "Pull Request.webloc",
+                      "kind": "link",
+                      "source": "https://github.com/morluto/rea/pull/6137",
+                      "opensWith": "safari",
+                      "modified": "2026-10-01"
                     }
                   ]
                 }
@@ -322,12 +423,12 @@
                 {
                   "type": "file",
                   "id": "downloads-resume",
-                  "name": "Mohith_D_K_1.pdf",
+                  "name": "Mohith_resume_AI.pdf",
                   "kind": "pdf",
                   "source": "public/Resume.pdf",
                   "opensWith": "preview",
-                  "modified": "2026-09-24",
-                  "size": "134 KB"
+                  "modified": "2026-10-25",
+                  "size": "166 KB"
                 }
               ]
             },

@@ -134,6 +134,7 @@ function finderMenus(win?: Win): MenuDef[] {
         { label: 'Home', shortcut: '⇧⌘H', action: () => goTo(HOME_ID) },
         { label: 'Projects', action: () => goTo('projects') },
         { label: 'Experience', action: () => goTo('experience') },
+        { label: 'Open Source', action: () => goTo('opensource') },
         { label: 'Documents', shortcut: '⇧⌘O', action: () => goTo('documents') },
         { label: 'Downloads', shortcut: '⌥⌘L', action: () => goTo('downloads') },
         { label: 'Applications', shortcut: '⇧⌘A', action: () => goTo('applications') },

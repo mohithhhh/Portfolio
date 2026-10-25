@@ -1,7 +1,7 @@
 // Pure Terminal command interpreter over the virtual filesystem.
 // The React view (Terminal.tsx) renders its output and performs side effects
 // (opening windows, asking the agent) described by the result.
-import { documents, plainText, profile, projects, skills, experience } from '@/content'
+import { documents, experience, formatRange, openSource, plainText, profile, projects, skills } from '@/content'
 import { APPS, type AppId } from '@/os/apps-meta'
 import {
   displayPath,
@@ -35,6 +35,10 @@ export const COMMANDS: Array<{ name: string; usage: string; help: string }> = [
   { name: 'cat', usage: 'cat <file>', help: 'Print a document' },
   { name: 'open', usage: 'open <path> | open -a <App>', help: 'Open a file, folder or app' },
   { name: 'whoami', usage: 'whoami', help: 'Who owns this Mac' },
+  { name: 'projects', usage: 'projects', help: 'Projects with live links' },
+  { name: 'opensource', usage: 'opensource', help: 'Merged open-source pull requests' },
+  { name: 'contact', usage: 'contact', help: 'Email, phone and profiles' },
+  { name: 'resume', usage: 'resume', help: 'Open Resume.pdf' },
   { name: 'about', usage: 'about', help: 'System and owner summary' },
   { name: 'history', usage: 'history', help: 'Show previous commands' },
   { name: 'clear', usage: 'clear', help: 'Clear the screen' },
@@ -94,8 +98,10 @@ export function neofetch(): OutLine[] {
     '-----------------------',
     `Role: ${profile.title}`,
     `Location: ${profile.location}`,
-    edu ? `Education: ${edu.degree}, ${edu.institution}` : '',
+    `Now: ${profile.title}, ${experience[0]?.company ?? ''}`,
+    edu ? `Education: ${edu.degree}, ${edu.institution}${edu.cgpa ? ` (CGPA ${edu.cgpa})` : ''}` : '',
     `Experience: ${experience.map((e) => e.company).join(', ')}`,
+    `Open source: ${openSource.map((o) => o.project).join(', ')}`,
     `Projects: ${projects.map((p) => p.name).join(', ')}`,
     `Skills: ${skills.categories.flatMap((c) => c.items).slice(0, 8).join(', ')}…`,
     `Contact: ${profile.email}`,
@@ -130,6 +136,33 @@ export function runCommand(line: string, ctx: CommandContext): CommandResult {
       return { output: [{ text: `${profile.name} — ${profile.title}. ${profile.tagline}` }] }
     case 'about':
       return { output: neofetch() }
+    case 'projects':
+      return {
+        output: projects.flatMap((p) => [
+          { text: `${p.name}  (${formatRange(p.start, p.end)})`, tone: 'accent' as const },
+          { text: `  ${p.summary}` },
+          ...(p.demo ? [{ text: `  ${p.demo}`, tone: 'dir' as const }] : []),
+        ]),
+      }
+    case 'opensource':
+    case 'oss':
+      return {
+        output: openSource.flatMap((o) => [
+          { text: `${o.project} (${o.stars}★) — ${o.title}`, tone: 'accent' as const },
+          { text: `  ${o.url}`, tone: 'dir' as const },
+        ]),
+      }
+    case 'contact':
+      return {
+        output: [
+          { text: `Email     ${profile.email}` },
+          { text: `Phone     ${profile.phone}` },
+          ...profile.links.map((l) => ({ text: `${l.label.padEnd(10)}${l.url}` })),
+          { text: "Or type 'open -a Mail' to write to me here.", tone: 'muted' as const },
+        ],
+      }
+    case 'resume':
+      return { output: [{ text: 'Opening Resume.pdf…', tone: 'muted' }], open: { nodeId: 'resume' } }
     case 'clear':
       return { output: [], clear: true }
     case 'history':

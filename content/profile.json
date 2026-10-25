@@ -1,17 +1,30 @@
 {
   "name": "Mohith D K",
   "monogram": "MDK",
-  "title": "AI Intern",
-  "headline": "AI/ML engineer: NLP, LLMs and deep learning",
+  "title": "AI/ML Engineering Intern",
+  "headline": "AI/ML engineer: LLM systems, multi-agent AI and NLP",
   "tagline": "Building enterprise AI agents and ML systems that solve real business problems, not just demos. Idea to production, at global scale.",
   "location": "Bangalore, Karnataka, India",
   "email": "mohithog7@gmail.com",
   "phone": "+91 9019325337",
-  "availability": { "open": true, "label": "Open to work" },
-  "currentProject": "arseniccure",
+  "availability": {
+    "open": true,
+    "label": "Open to work"
+  },
+  "currentProject": "provenance",
   "links": [
-    { "id": "github", "label": "GitHub", "url": "https://github.com/mohithhhh", "handle": "mohithhhh" },
-    { "id": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/mohith-d-k-76b815255/", "handle": "mohith-d-k" }
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/mohithhhh",
+      "handle": "mohithhhh"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mohith-d-k-76b815255/",
+      "handle": "mohith-d-k"
+    }
   ],
   "education": [
     {
@@ -21,7 +34,17 @@
       "degree": "B.Tech in Computer Science Engineering (AI/ML)",
       "start": "2022-08",
       "end": "2026-05",
-      "coursework": ["Advanced Data Analytics", "Deep Learning", "LLM", "NLP", "Machine Learning", "Computer Networks", "Operating Systems", "Cloud Computing"]
+      "coursework": [
+        "Advanced Data Analytics",
+        "Deep Learning",
+        "LLM",
+        "NLP",
+        "Machine Learning",
+        "Computer Networks",
+        "Operating Systems",
+        "Cloud Computing"
+      ],
+      "cgpa": "8.16"
     }
   ],
   "publications": [
