@@ -29,6 +29,12 @@ export const isFolder = (n: FSNode | undefined): n is FSFolder => n?.type === 'f
 export const isFile = (n: FSNode | undefined): n is FSFile => n?.type === 'file'
 export const isHidden = (n: FSNode) => n.name.startsWith('.')
 
+/** Follows an alias to the node it points at (other nodes are returned as-is). */
+export function resolveAlias(ix: FSIndex, node: FSNode | undefined): FSNode | undefined {
+  if (node?.type === 'file' && node.kind === 'alias') return ix.byId.get(node.source)
+  return node
+}
+
 /** Nodes from the root down to (and including) `id`. */
 export function ancestry(ix: FSIndex, id: string): FSNode[] {
   const out: FSNode[] = []
@@ -83,7 +89,7 @@ export function resolvePath(ix: FSIndex, cwdId: string, input: string): FSNode |
       continue
     }
     if (!isFolder(cur)) return undefined
-    cur = childNamed(cur, part)
+    cur = resolveAlias(ix, childNamed(cur, part))
   }
   return cur
 }
@@ -109,6 +115,8 @@ export function kindLabel(n: FSNode): string {
       return 'Web location'
     case 'app-shortcut':
       return 'Application'
+    case 'alias':
+      return 'Alias'
   }
 }
 
@@ -192,6 +200,8 @@ export function iconFor(n: FSNode): string {
       return '/icons/doc-link.svg'
     case 'app-shortcut':
       return `/icons/${n.opensWith}.svg`
+    case 'alias':
+      return '/icons/folder.svg'
   }
 }
 

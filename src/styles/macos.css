@@ -913,3 +913,16 @@ html[data-transparency='frosted'] .dock {
 .mac-notification-close:focus-visible {
   opacity: 1;
 }
+
+/* alias icons: target icon with the curved-arrow badge in the bottom-left corner */
+.alias-icon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+}
+.alias-badge {
+  position: absolute;
+  left: 4%;
+  bottom: 6%;
+  filter: drop-shadow(0 0.5px 1px rgb(0 0 0 / 0.3));
+}

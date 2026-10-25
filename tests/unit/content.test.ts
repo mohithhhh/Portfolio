@@ -25,7 +25,7 @@ describe('content', () => {
 
   it('puts the resume, a README and a photo on the Desktop', () => {
     const names = listChildren(vfs, 'desktop').map((n) => n.name)
-    expect(names).toEqual(expect.arrayContaining(['Resume.pdf', 'README.md']))
+    expect(names).toEqual(['Resume.pdf', 'README.md', 'Projects', 'Experience', 'Open Source', 'Hackathon Winners.jpg', 'Mohith.jpg'])
   })
 
   it('carries every resume fact that the spec maps', () => {
@@ -63,6 +63,8 @@ describe('search', () => {
     expect(search(index, 'termin')[0]?.title).toBe('Terminal')
     expect(search(index, 'resume').some((h) => h.title === 'Resume.pdf')).toBe(true)
     expect(search(index, 'maersk')[0]?.category).toBe('Experience')
+    expect(search(index, 'hackathon').some((h) => h.title === 'Hackathon Winners.jpg')).toBe(true)
+    expect(search(index, 'projects').filter((h) => h.title === 'Projects')).toHaveLength(1)
     expect(search(index, '')).toEqual([])
   })
 })

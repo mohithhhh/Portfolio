@@ -185,7 +185,7 @@ export function runCommand(line: string, ctx: CommandContext): CommandResult {
       if (flags.includes('l')) {
         return {
           output: items.map((n) => ({
-            text: `${n.type === 'folder' ? 'd' : '-'}rw-r--r--  ${(n.type === 'file' ? (n.size ?? '—') : '—').padStart(7)}  ${
+            text: `${n.type === 'folder' ? 'd' : n.kind === 'alias' ? 'l' : '-'}rw-r--r--  ${(n.type === 'file' ? (n.size ?? '—') : '—').padStart(7)}  ${
               n.type === 'file' ? n.modified : '          '
             }  ${n.name}${n.type === 'folder' ? '/' : ''}`,
             tone: n.type === 'folder' ? ('dir' as const) : undefined,

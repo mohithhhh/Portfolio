@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 import type { FSNode } from '@/content/schema'
 import { openNode, originOf } from '@/os/actions'
-import { ancestry, DESKTOP_ID, HOME_ID, kindLabel, latestModified, ROOT_ID, type SortKey } from '@/os/fs'
+import { ancestry, DESKTOP_ID, HOME_ID, kindLabel, latestModified, resolveAlias, ROOT_ID, type SortKey } from '@/os/fs'
 import { useFs } from '@/os/stores/fs'
 import { useUi } from '@/os/stores/ui'
 import { useWindows } from '@/os/stores/windows'
@@ -70,7 +70,9 @@ export function FinderView({ win, focused, fixedFolder, toolbarExtra, emptyState
     if (!fixedFolder) setTitle(win.id, loc.folderId === HOME_ID ? 'mohith' : (loc.folder?.name ?? 'Finder'))
   }, [fixedFolder, loc.folderId, loc.folder?.name, setTitle, win.id])
 
-  const open = (n: FSNode, el?: Element | null) => {
+  const open = (node: FSNode, el?: Element | null) => {
+    // An alias to a folder navigates in place, like macOS.
+    const n = resolveAlias(vfs, node) ?? node
     if (n.type === 'folder' && n.id !== 'trash') {
       setQuery('')
       loc.go(n.id)

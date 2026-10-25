@@ -149,6 +149,14 @@ export default function SimplePage() {
               </li>
             ))}
           </ul>
+          {profile.achievements
+            .filter((a) => a.photo)
+            .map((a) => (
+              <figure key={`${a.id}-photo`} className="simple-figure">
+                <img src={a.photo} alt={`${a.title}: the team with certificates and trophy`} width={1600} height={1125} loading="lazy" />
+                <figcaption>{a.title}</figcaption>
+              </figure>
+            ))}
         </section>
 
         <section id="skills" aria-labelledby="skills-h">

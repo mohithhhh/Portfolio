@@ -140,6 +140,43 @@
                 },
                 {
                   "type": "file",
+                  "id": "desktop-alias-projects",
+                  "name": "Projects",
+                  "kind": "alias",
+                  "source": "projects",
+                  "opensWith": "finder",
+                  "modified": "2026-10-25"
+                },
+                {
+                  "type": "file",
+                  "id": "desktop-alias-experience",
+                  "name": "Experience",
+                  "kind": "alias",
+                  "source": "experience",
+                  "opensWith": "finder",
+                  "modified": "2026-10-25"
+                },
+                {
+                  "type": "file",
+                  "id": "desktop-alias-opensource",
+                  "name": "Open Source",
+                  "kind": "alias",
+                  "source": "opensource",
+                  "opensWith": "finder",
+                  "modified": "2026-10-25"
+                },
+                {
+                  "type": "file",
+                  "id": "hackathon-photo",
+                  "name": "Hackathon Winners.jpg",
+                  "kind": "image",
+                  "source": "public/hackathon-winners.jpg",
+                  "opensWith": "preview",
+                  "modified": "2026-10-25",
+                  "size": "214 KB"
+                },
+                {
+                  "type": "file",
                   "id": "profile-photo",
                   "name": "Mohith.jpg",
                   "kind": "image",
@@ -418,6 +455,16 @@
                       "source": "content/docs/hack-ai.mdx",
                       "opensWith": "textedit",
                       "modified": "2026-09-24"
+                    },
+                    {
+                      "type": "file",
+                      "id": "cert-hack-ai-photo",
+                      "name": "Hackathon Winners.jpg",
+                      "kind": "image",
+                      "source": "public/hackathon-winners.jpg",
+                      "opensWith": "preview",
+                      "modified": "2026-10-25",
+                      "size": "214 KB"
                     },
                     {
                       "type": "file",

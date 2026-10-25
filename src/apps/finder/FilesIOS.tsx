@@ -1,7 +1,7 @@
 'use client'
 import { ChevronRight } from 'lucide-react'
 import { useState } from 'react'
-import { HOME_ID, kindLabel, listChildren } from '@/os/fs'
+import { HOME_ID, kindLabel, listChildren, resolveAlias } from '@/os/fs'
 import { vfs } from '@/os/vfs'
 import { FileIcon } from '@/ui/FileIcon'
 import { FilePreview } from '@/ui/FilePreview'
@@ -38,6 +38,12 @@ export default function FilesIOS() {
             <button
               className="ios-row"
               onClick={() => {
+                const t = resolveAlias(vfs, n)
+                if (t && t !== n) {
+                  if (t.type === 'folder') loc.go(t.id)
+                  else setFileId(t.id)
+                  return
+                }
                 if (n.type === 'folder') loc.go(n.id)
                 else if (n.kind === 'link') window.open(n.source, '_blank', 'noopener,noreferrer')
                 else setFileId(n.id)

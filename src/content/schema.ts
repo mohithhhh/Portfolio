@@ -29,7 +29,8 @@ export type FSFile = {
   type: 'file'
   id: string
   name: string
-  kind: 'pdf' | 'md' | 'image' | 'video' | 'link' | 'app-shortcut'
+  /** `alias`: a macOS-style shortcut; `source` is the id of the node it points to. */
+  kind: 'pdf' | 'md' | 'image' | 'video' | 'link' | 'app-shortcut' | 'alias'
   source: string
   opensWith: AppId
   modified: string
@@ -42,7 +43,7 @@ export const fsFileSchema = z.object({
   type: z.literal('file'),
   id: z.string().min(1),
   name: z.string().min(1),
-  kind: z.enum(['pdf', 'md', 'image', 'video', 'link', 'app-shortcut']),
+  kind: z.enum(['pdf', 'md', 'image', 'video', 'link', 'app-shortcut', 'alias']),
   source: z.string().min(1),
   opensWith: z.enum(APP_IDS),
   modified: isoDate,
@@ -100,7 +101,7 @@ export const profileSchema = z.object({
       project: z.string().optional(),
     }),
   ),
-  achievements: z.array(z.object({ id: z.string(), title: z.string(), detail: z.string() })),
+  achievements: z.array(z.object({ id: z.string(), title: z.string(), detail: z.string(), photo: z.string().optional() })),
 })
 
 export const skillsSchema = z.object({

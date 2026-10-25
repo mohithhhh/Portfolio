@@ -40,6 +40,17 @@ test('navigates Finder to a project and opens its README', async ({ page }) => {
   await expect(page.getByTestId('menubar-app-name')).toHaveText('TextEdit')
 })
 
+test('desktop aliases open their folders in Finder', async ({ page }) => {
+  await boot(page)
+  await page.getByTestId('desktop-icon-desktop-alias-projects').dblclick()
+  const finder = page.locator('[data-app="finder"]')
+  await expect(finder.getByTestId('finder-title')).toHaveText('Projects')
+  await expect(finder.getByTestId('finder-item-project-provenance')).toBeVisible()
+  await page.getByTestId('desktop-icon-hackathon-photo').click()
+  await page.keyboard.press('Space')
+  await expect(page.getByTestId('quicklook').getByRole('img', { name: 'Hackathon Winners.jpg' })).toBeVisible()
+})
+
 test('drags and resizes a window', async ({ page }) => {
   await boot(page)
   await page.getByTestId('dock-finder').click()

@@ -20,6 +20,8 @@ describe('terminal parser', () => {
     expect(text('ls')).not.toContain('.Trash')
     expect(text('ls -a')).toContain('.Trash/')
     expect(text('ls Desktop')).toContain('Resume.pdf')
+    expect(text('ls Desktop/Projects')).toContain('Provenance/')
+    expect(run('cd Desktop/Experience').cwdId).toBe('experience')
     expect(run('ls nope').output[0]?.tone).toBe('error')
   })
 

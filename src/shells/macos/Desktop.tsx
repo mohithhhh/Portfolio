@@ -26,6 +26,11 @@ function defaultSlot(index: number, areaW: number, areaH: number) {
 
 export function fileMenu(node: FSNode, origin?: { x: number; y: number }): MenuEntry[] {
   const items: MenuEntry[] = [{ label: 'Open', action: () => openNode(node.id, origin) }]
+  if (node.type === 'file' && node.kind === 'alias') {
+    const parent = vfs.parent.get(node.source)
+    items.push({ label: 'Show Original', shortcut: '⌘R', disabled: !parent, action: () => parent && openNode(parent) })
+    return items
+  }
   if (node.type === 'file') {
     const alternatives = Object.values(APPS).filter(
       (a) => a.id !== node.opensWith && node.kind !== 'app-shortcut' && (a.fileTypes as string[]).includes(node.kind),

@@ -75,6 +75,15 @@ function walk(node: FSNode, path: string) {
 }
 if (tree) walk(tree, '')
 
+// Aliases must point at a real node (checked after the walk, once all ids are known).
+const aliases: Array<{ path: string; target: string }> = []
+function collectAliases(node: FSNode, path: string) {
+  if (node.type === 'folder') node.children.forEach((c) => collectAliases(c, `${path}/${c.name}`))
+  else if (node.kind === 'alias') aliases.push({ path, target: node.source })
+}
+if (tree) collectAliases(tree, '')
+for (const a of aliases) if (!ids.has(a.target)) errors.push(`${a.path}: alias points at unknown id "${a.target}"`)
+
 if (errors.length) {
   console.error(`Content validation failed:\n\n${errors.join('\n\n')}`)
   process.exit(1)

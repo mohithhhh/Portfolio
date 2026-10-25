@@ -79,7 +79,7 @@ export function buildIndex(ix: FSIndex): SearchItem[] {
   }
   for (const node of ix.byId.values()) {
     if (isHidden(node) || node.id === 'root') continue
-    if (node.type === 'file' && node.kind === 'app-shortcut') continue
+    if (node.type === 'file' && (node.kind === 'app-shortcut' || node.kind === 'alias')) continue
     // Projects, roles and open-source entries have dedicated results above;
     // their folders and README/role files would only duplicate them.
     if (node.id.endsWith('-readme') || node.id.endsWith('-role')) continue

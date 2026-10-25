@@ -8,10 +8,12 @@ import {
   displayPath,
   forward,
   HOME_ID,
+  kindLabel,
   listChildren,
   navigate,
   newHistory,
   pathOf,
+  resolveAlias,
   resolvePath,
   sortNodes,
 } from '@/os/fs'
@@ -37,6 +39,14 @@ describe('virtual filesystem', () => {
     expect(resolvePath(vfs, HOME_ID, 'Nope')).toBeUndefined()
     expect(resolvePath(vfs, HOME_ID, 'Desktop/Resume.pdf/x')).toBeUndefined()
     expect(resolvePath(vfs, 'root', '..')?.id).toBe('root')
+  })
+
+  it('follows desktop aliases to their folders', () => {
+    expect(resolvePath(vfs, HOME_ID, 'Desktop/Projects')?.id).toBe('projects')
+    expect(resolvePath(vfs, HOME_ID, 'Desktop/Open Source/REA/Pull Request.webloc')?.id).toBe('oss-rea-pr')
+    expect(resolveAlias(vfs, vfs.byId.get('desktop-alias-experience'))?.id).toBe('experience')
+    expect(resolveAlias(vfs, vfs.byId.get('resume'))?.id).toBe('resume')
+    expect(kindLabel(vfs.byId.get('desktop-alias-projects')!)).toBe('Alias')
   })
 
   it('hides dotfiles unless asked', () => {

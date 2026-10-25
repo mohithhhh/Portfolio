@@ -6,6 +6,7 @@ import { APPS } from '@/os/apps-meta'
 import { openNode } from '@/os/actions'
 import { useReducedMotion } from '@/os/hooks'
 import { useUi } from '@/os/stores/ui'
+import { resolveAlias } from '@/os/fs'
 import { vfs } from '@/os/vfs'
 import { FilePreview } from '@/ui/FilePreview'
 
@@ -13,7 +14,7 @@ export function QuickLook() {
   const id = useUi((s) => s.quickLookId)
   const setQuickLook = useUi((s) => s.setQuickLook)
   const reduced = useReducedMotion()
-  const node = id ? vfs.byId.get(id) : undefined
+  const node = id ? resolveAlias(vfs, vfs.byId.get(id)) : undefined
 
   useEffect(() => {
     if (!id) return

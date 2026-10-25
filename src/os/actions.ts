@@ -45,6 +45,7 @@ export function activateApp(appId: AppId, origin?: Origin) {
 export function openNode(nodeId: string, origin?: Origin) {
   const node = vfs.byId.get(nodeId)
   if (!node) return
+  if (node.type === 'file' && node.kind === 'alias') return openNode(node.source, origin)
   if (isFolder(node)) {
     if (node.id === TRASH_ID) return openApp('trash', { origin })
     return openApp('finder', { origin, payload: { nodeId }, title: node.name })

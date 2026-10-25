@@ -37,12 +37,12 @@ Source: `input/resume.pdf` (the October 2026 resume; it replaced the September o
 | OPEN SOURCE: REA (358k★) PR #6137, Oct 2026 | `content/opensource/rea.mdx` → FS `~/Open Source/REA/` |
 | PUBLICATIONS: ICCIS 2025, Springer LNCS | `profile.publications` → Notes, Certificates doc, Safari "Writing", project README, `/simple` |
 | TECHNICAL SKILLS (4 categories) | `skills.json` → About This Mac spec rows + "More Info…", Terminal `about`, `/simple`, agent prompt |
-| ACHIEVEMENTS: HACK-AI winners | `profile.achievements` → FS `~/Documents/Certificates/HACK-AI Winners.md`, Notes, `/simple` |
+| ACHIEVEMENTS: HACK-AI winners | `profile.achievements` (incl. `photo`) → FS `~/Documents/Certificates/HACK-AI Winners.md` and `Hackathon Winners.jpg`, `~/Desktop/Hackathon Winners.jpg`, Notes, `/simple` |
 | Full resume | `public/Resume.pdf` → FS `~/Desktop/Resume.pdf`, `~/Downloads/Mohith_resume_AI.pdf`, iOS "Resume", `/simple` download |
 
 Removed with the new resume: ArsenicCure and the multimodal cyberbullying project (no longer listed), and the Jun–Jul 2025 Maersk internship entry (the resume now lists the Jan 2026 role).
 
-Non-resume content, both from the owner's previous site: the tagline "Building enterprise AI agents and ML systems…" and the photo.
+Non-resume content: the HACK-AI team photo (`public/hackathon-winners.jpg`, supplied by the owner), and, from the owner's previous site, the tagline "Building enterprise AI agents and ML systems…" and the photo.
 
 ## Filesystem (`content/filesystem.json`)
 
@@ -50,7 +50,8 @@ Non-resume content, both from the owner's previous site: the tagline "Building e
 / (Macintosh HD)
 ├── Applications/            Finder.app … Activity Monitor.app (app shortcuts)
 └── Users/mohith (~)
-    ├── Desktop/             Resume.pdf, README.md ("Start here"), Mohith.jpg
+    ├── Desktop/             Resume.pdf, README.md ("Start here"), aliases to Projects / Experience /
+    │                        Open Source, Hackathon Winners.jpg, Mohith.jpg
     ├── Projects/<project>/  README.md, Live Site.webloc, Repository.webloc (the research project has neither)
     ├── Experience/<company>/role.md            (×3, newest first)
     ├── Open Source/<repo>/  README.md, Pull Request.webloc (×2)
