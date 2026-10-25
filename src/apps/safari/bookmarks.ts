@@ -50,6 +50,19 @@ export function bookmarkSections(origin: string): Array<{ title: string; items: 
       }),
     },
     {
+      title: 'Code',
+      items: projects
+        .filter((p) => p.repo)
+        .map((p) => ({
+          title: p.name,
+          url: p.repo,
+          subtitle: p.repo!.replace(/^https?:\/\/(www\.)?github\.com\//, ''),
+          initial: p.name[0]!,
+          color: '#FFFFFF',
+          brand: 'github' as const,
+        })),
+    },
+    {
       title: 'Open Source',
       items: openSource.map((o) => ({
         title: `${o.project} PR`,

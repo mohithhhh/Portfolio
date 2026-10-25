@@ -33,6 +33,7 @@ test('navigates Finder to a project and opens its README', async ({ page }) => {
   await finder.getByTestId('finder-item-project-provenance').dblclick()
   await expect(finder.getByTestId('finder-title')).toHaveText('Provenance')
   await expect(finder.getByTestId('finder-item-project-provenance-site')).toBeVisible()
+  await expect(finder.getByTestId('finder-item-project-provenance-repo')).toBeVisible()
   await finder.getByTestId('finder-item-project-provenance-readme').dblclick()
   const doc = windowByTitle(page, 'README.md')
   await expect(doc.getByRole('heading', { name: 'Provenance' })).toBeVisible()

@@ -6,9 +6,21 @@
     "start": "2026-10",
     "end": "2026-10",
     "summary": "Ensemble AI-content detector (GPT-2 perplexity, conformally calibrated classifier, C2PA, watermarking) with per-sentence attribution and an Attack Lab that stress-tests every detector.",
-    "tags": ["GPT-2", "Conformal prediction", "C2PA", "FastAPI", "Next.js", "SQLite", "Docker"],
-    "highlights": ["Per-sentence attribution", "Attack Lab with T5 paraphrase attacks", "Semantic retrieval ledger"],
-    "repo": null,
+    "tags": [
+      "GPT-2",
+      "Conformal prediction",
+      "C2PA",
+      "FastAPI",
+      "Next.js",
+      "SQLite",
+      "Docker"
+    ],
+    "highlights": [
+      "Per-sentence attribution",
+      "Attack Lab with T5 paraphrase attacks",
+      "Semantic retrieval ledger"
+    ],
+    "repo": "https://github.com/mohithhhh/provenance",
     "demo": "https://provenance.mohithog7.workers.dev/"
   },
   {
@@ -18,9 +30,20 @@
     "start": "2026-08",
     "end": "2026-08",
     "summary": "Three Gemini agents (two debaters and a judge) argue over three rounds, grounded in live web research and streamed over FastAPI + SSE, with debates in 10 Indian languages.",
-    "tags": ["Gemini", "Multi-agent", "Tavily", "FastAPI", "SSE", "Vercel"],
-    "highlights": ["3 agents, 3 rounds", "Live web research grounding", "10 Indian languages with voice"],
-    "repo": null,
+    "tags": [
+      "Gemini",
+      "Multi-agent",
+      "Tavily",
+      "FastAPI",
+      "SSE",
+      "Vercel"
+    ],
+    "highlights": [
+      "3 agents, 3 rounds",
+      "Live web research grounding",
+      "10 Indian languages with voice"
+    ],
+    "repo": "https://github.com/mohithhhh/il-colosseo",
     "demo": "https://ilcolosseo.vercel.app/"
   },
   {
@@ -30,9 +53,21 @@
     "start": "2026-07",
     "end": "2026-07",
     "summary": "Consumer pharma MVP (10+ users): snap a strip or type a medicine name to get plain-language usage, side effects and warnings in 11 Indian languages via Gemini.",
-    "tags": ["Gemini", "Next.js 14", "Supabase", "PostgreSQL", "Razorpay", "SSE", "Vercel"],
-    "highlights": ["10+ users", "11 Indian languages", "Tiered pricing with Razorpay"],
-    "repo": null,
+    "tags": [
+      "Gemini",
+      "Next.js 14",
+      "Supabase",
+      "PostgreSQL",
+      "Razorpay",
+      "SSE",
+      "Vercel"
+    ],
+    "highlights": [
+      "10+ users",
+      "11 Indian languages",
+      "Tiered pricing with Razorpay"
+    ],
+    "repo": "https://github.com/mohithhhh/dawaisathi",
     "demo": "https://dawaisathi.vercel.app/"
   },
   {
@@ -42,8 +77,17 @@
     "start": "2025-06",
     "end": "2025-07",
     "summary": "Mapped how BERT's internal \"beliefs\" evolve across 10 fine-tuning epochs with graph-theoretic networks and 2D embeddings. Published at ICCIS 2025 (Springer LNCS).",
-    "tags": ["BERT", "Interpretability", "Graph theory", "Embeddings", "Research"],
-    "highlights": ["Accepted at ICCIS 2025, BITS Pilani Goa (Springer LNCS)", "10 fine-tuning epochs analysed"],
+    "tags": [
+      "BERT",
+      "Interpretability",
+      "Graph theory",
+      "Embeddings",
+      "Research"
+    ],
+    "highlights": [
+      "Accepted at ICCIS 2025, BITS Pilani Goa (Springer LNCS)",
+      "10 fine-tuning epochs analysed"
+    ],
     "repo": null,
     "demo": null
   }

@@ -10,7 +10,7 @@ test('iOS shell renders on a phone viewport', async ({ page }) => {
   await page.getByTestId('ios-app-finder').click()
   await expect(page.getByTestId('ios-open-finder')).toBeVisible()
   await page.getByRole('button', { name: /Projects/ }).click()
-  await expect(page.getByRole('button', { name: /^Provenance 2 items/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: /^Provenance 3 items/ })).toBeVisible()
   await page.getByRole('button', { name: 'Go to home screen' }).click()
   await expect(page.getByTestId('ios-open-finder')).toBeHidden()
   await page.getByTestId('ios-app-terminal').click()

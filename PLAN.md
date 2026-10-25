@@ -51,7 +51,7 @@ Non-resume content, both from the owner's previous site: the tagline "Building e
 ├── Applications/            Finder.app … Activity Monitor.app (app shortcuts)
 └── Users/mohith (~)
     ├── Desktop/             Resume.pdf, README.md ("Start here"), Mohith.jpg
-    ├── Projects/<project>/  README.md, Live Site.webloc   (×4; the research project has no live site)
+    ├── Projects/<project>/  README.md, Live Site.webloc, Repository.webloc (the research project has neither)
     ├── Experience/<company>/role.md            (×3, newest first)
     ├── Open Source/<repo>/  README.md, Pull Request.webloc (×2)
     ├── Documents/           Certificates/ (B.Tech, HACK-AI, ICCIS 2025), Keyboard Shortcuts.md
@@ -83,15 +83,15 @@ The spec wants side-by-side comparisons in `input/compare/`; that folder is wait
 ## Open questions for the owner
 
 1. **"Open to work"**: the spec requires this status item. It is on (`profile.availability.open`); set it to `false` if that is wrong.
-2. **Current project**: the iOS Dynamic Island and widget say "Building: Provenance" (the most recent project). Change `profile.currentProject` if another one is current.
-3. **Repositories**: add public repo URLs for Il Colosseo, Provenance and DawaiSathi (`repo` in `content/projects/index.json`) to get a Repository link next to each Live Site.
+2. **Repository visibility**: Il Colosseo, Provenance and DawaiSathi link to `github.com/mohithhhh/il-colosseo`, `/provenance` and `/dawaisathi`. The repos exist, but their public visibility couldn't be checked from the build environment; if any is private, visitors get a 404, so make it public or clear its `repo` in `content/projects/index.json`.
+
+Confirmed by the owner: Provenance is the current project (iOS Dynamic Island and widget).
 
 Resolved by the October 2026 resume: the duplicated SpectoV/Maersk bullets and the job title.
 
 ## TODOs (missing content)
 
 - `TODO(owner)`: link to the ICCIS 2025 paper (DOI or Springer page). Shown in Notes and Safari → `profile.publications[0].url`.
-- `TODO(owner)`: repository links for each project → `repo` in `content/projects/index.json` (live links are in).
 - `TODO(owner)`: architecture diagrams, screenshots or demo videos for projects → `public/` and `filesystem.json`.
 - `TODO(owner)`: Trash content (failed experiments and lessons learned). The Trash currently shows an empty state with this TODO.
 - `TODO(owner)`: HACK-AI date and winning project (Notes).

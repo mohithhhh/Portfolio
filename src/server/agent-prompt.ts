@@ -18,7 +18,7 @@ function knowledge(): string {
   const proj = projects
     .map(
       (p) =>
-        `### ${p.name} (${formatRange(p.start, p.end)})${p.demo ? ` — live at ${p.demo}` : ''}\n${plainText(documents[`content/projects/${p.slug}.mdx`] ?? '')}`,
+        `### ${p.name} (${formatRange(p.start, p.end)})${p.demo ? ` — live at ${p.demo}` : ''}${p.repo ? `, code at ${p.repo}` : ''}\n${plainText(documents[`content/projects/${p.slug}.mdx`] ?? '')}`,
     )
     .join('\n\n')
   const oss = openSource.map((o) => `- ${o.project} (${o.stars} stars): ${o.title}, ${o.url}. ${o.summary}`).join('\n')

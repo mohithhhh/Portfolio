@@ -142,6 +142,7 @@ export function runCommand(line: string, ctx: CommandContext): CommandResult {
           { text: `${p.name}  (${formatRange(p.start, p.end)})`, tone: 'accent' as const },
           { text: `  ${p.summary}` },
           ...(p.demo ? [{ text: `  ${p.demo}`, tone: 'dir' as const }] : []),
+          ...(p.repo ? [{ text: `  ${p.repo}`, tone: 'dir' as const }] : []),
         ]),
       }
     case 'opensource':

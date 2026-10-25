@@ -37,6 +37,7 @@ describe('content', () => {
     expect(profile.education[0]?.cgpa).toBe('8.16')
     expect(openSource.map((o) => o.project)).toEqual(['pydantic-ai', 'REA'])
     expect(projects.filter((p) => p.demo).length).toBe(3)
+    expect(projects.filter((p) => p.repo).map((p) => p.slug)).toEqual(['provenance', 'il-colosseo', 'dawaisathi'])
     expect(profile.publications[0]?.publisher).toBe('Springer LNCS')
     expect(profile.achievements[0]?.title).toContain('HACK-AI')
     expect(skills.categories.flatMap((c) => c.items)).toEqual(expect.arrayContaining(['Python', 'PyTorch', 'FastAPI', 'Docker', 'Next.js', 'Supabase', 'Grafana']))
